@@ -20,7 +20,8 @@
         /* SALVIA COMPLETE STYLES (IMPORTED) */
         :root {
             --color-dark: #1f3d2b;
-            --color-mid: #2f5a43;
+            --color-mid: #3d5f4d;
+            /* Updated to match body text */
             --color-light: #6b8f7a;
             --color-bg: #f7f9f6;
         }
@@ -53,7 +54,6 @@
 
         .salvia-blob {
             width: 100px;
-            /* Smaller on mobile default */
             height: 100px;
             background: linear-gradient(135deg, #5a8a6e 0%, #1f3d2b 100%);
             border-radius: 50%;
@@ -108,7 +108,6 @@
         .viz-label {
             position: absolute;
             bottom: 1.5rem;
-            /* Adjusted for mobile */
             font-family: 'Inter', sans-serif;
             pointer-events: none;
             width: auto;
@@ -122,7 +121,6 @@
 
         .viz-label .title {
             font-size: 0.6rem;
-            /* Smaller on mobile */
             text-transform: uppercase;
             letter-spacing: 0.15em;
             color: #8b7355;
@@ -144,7 +142,6 @@
 
         .viz-label .desc {
             font-size: 0.75rem;
-            /* Smaller on mobile */
             color: #1f3d2b;
             font-weight: 500;
             display: block;
@@ -160,29 +157,8 @@
             text-align: right;
         }
 
-        /* ORIGINAL INDEX STYLES (Preserved where needed) */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .bg-salvia-dark {
-            background-color: #1f3d2b;
-        }
-
-        /* Updated to match new dark green */
-        .text-salvia-green {
-            color: #2f5a43;
-        }
-
-        /* Updated to match new mid green */
         .btn-shadow {
             box-shadow: 0 4px 14px 0 rgba(45, 90, 67, 0.39);
-        }
-
-        .dashboard-window {
-            box-shadow: 0 50px 100px -20px rgba(26, 58, 42, 0.15), 0 30px 60px -30px rgba(0, 0, 0, 0.1);
         }
 
         /* Mobile Menu Transitions */
@@ -269,7 +245,7 @@
         <div class="max-w-4xl text-center mb-10 md:mb-16">
             <h1
                 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight text-[#1f3d2b] leading-[1.1] md:leading-[1.05]">
-                Stop documenting.<br><span class="italic text-[#5a8a6e]">Start caring.</span>
+                Stop documenting.<br><span class="italic text-[#6b8f7a]">Start caring.</span>
             </h1>
             <p
                 class="mt-6 md:mt-8 text-base md:text-xl text-[#3d5f4d] max-w-2xl mx-auto leading-relaxed font-light px-2">
@@ -300,14 +276,15 @@
         </div>
     </section>
 
-    <!-- 3. THE WORKSPACE / MANAGEMENT HUB (Original Index Content) -->
+    <!-- 3. THE WORKSPACE / MANAGEMENT HUB -->
     <section id="workspace" class="py-16 md:py-20 bg-slate-50/50">
         <div class="max-w-7xl mx-auto px-4 md:px-6">
             <div class="mb-10 md:mb-12 text-center max-w-3xl mx-auto">
-                <p class="text-[10px] font-bold text-emerald-700 uppercase tracking-widest mb-3">Enterprise
+                <p class="text-[10px] font-bold text-[#6b8f7a] uppercase tracking-widest mb-3">Enterprise
                     Infrastructure</p>
-                <h2 class="font-serif text-3xl md:text-4xl font-bold text-slate-900 mb-4">1. The Management Hub</h2>
-                <p class="text-slate-600 text-base md:text-lg font-light leading-relaxed">
+                <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#1f3d2b] mb-4">The Management
+                    Hub</h2>
+                <p class="text-[#3d5f4d] text-base md:text-lg font-light leading-relaxed">
                     A high-performance explorer designed for administrators and clinical leads to manage organizational
                     hierarchies, staff rosters, and resident directories.
                 </p>
@@ -352,7 +329,7 @@
                             <div class="overflow-y-auto">
                                 <div class="px-4 py-2 flex items-center gap-2 vsl-tree-hover font-bold text-slate-800">
                                     <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                                    <i data-lucide="building-2" class="w-4 h-4 text-emerald-700"></i>
+                                    <i data-lucide="building-2" class="w-4 h-4 text-[#1f3d2b]"></i>
                                     Orchard_Health_Corp
                                 </div>
                                 <div class="ml-4 px-4 py-2 flex items-center gap-2 vsl-tree-hover font-semibold">
@@ -361,7 +338,7 @@
                                     North_Region
                                 </div>
                                 <div
-                                    class="ml-8 px-4 py-2 flex items-center gap-2 vsl-tree-hover text-emerald-700 bg-emerald-50 border-l-2 border-emerald-700 font-medium">
+                                    class="ml-8 px-4 py-2 flex items-center gap-2 vsl-tree-hover text-[#1f3d2b] bg-emerald-50 border-l-2 border-[#1f3d2b] font-medium">
                                     <i data-lucide="users-2" class="w-4 h-4"></i>
                                     Clinical_Staff.staff
                                 </div>
@@ -378,7 +355,7 @@
                             <div
                                 class="h-10 bg-[#ececec] border-b border-slate-200 flex text-[10px] font-medium items-center">
                                 <div
-                                    class="bg-white px-6 h-full flex items-center gap-2 border-r border-slate-200 border-t-2 border-emerald-700">
+                                    class="bg-white px-6 h-full flex items-center gap-2 border-r border-slate-200 border-t-2 border-[#1f3d2b]">
                                     <i data-lucide="users-2" class="w-3.5 h-3.5"></i>
                                     Clinical_Staff.staff
                                 </div>
@@ -400,7 +377,7 @@
                                             class="bg-white border border-slate-200 text-slate-600 text-[11px] px-4 py-2 rounded-lg font-bold hover:bg-slate-50">Export
                                             PDF</button>
                                         <button
-                                            class="bg-emerald-700 text-white text-[11px] px-4 py-2 rounded-lg font-bold hover:bg-emerald-800 btn-shadow">+
+                                            class="bg-[#1f3d2b] text-white text-[11px] px-4 py-2 rounded-lg font-bold hover:bg-[#2f5a43] btn-shadow">+
                                             Add Member</button>
                                     </div>
                                 </div>
@@ -418,7 +395,7 @@
                                             <td class="py-4">
                                                 <div class="flex items-center gap-3">
                                                     <div
-                                                        class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center font-bold text-emerald-700 text-xs">
+                                                        class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center font-bold text-[#1f3d2b] text-xs">
                                                         ER</div>
                                                     <span class="font-medium text-slate-900">Emily Richardson</span>
                                                 </div>
@@ -426,7 +403,7 @@
                                             <td class="py-4 italic">RN / Clinical Lead</td>
                                             <td class="py-4">Morning / High Care</td>
                                             <td class="py-4"><span
-                                                    class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-bold">ACTIVE</span>
+                                                    class="px-2.5 py-1 rounded-full bg-emerald-100 text-[#1f3d2b] text-[10px] font-bold">ACTIVE</span>
                                             </td>
                                         </tr>
                                         <tr class="border-b border-slate-50 hover:bg-slate-50 transition-colors">
@@ -441,7 +418,7 @@
                                             <td class="py-4 italic">LPN</td>
                                             <td class="py-4">Post-Acute</td>
                                             <td class="py-4"><span
-                                                    class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-bold">ACTIVE</span>
+                                                    class="px-2.5 py-1 rounded-full bg-emerald-100 text-[#1f3d2b] text-[10px] font-bold">ACTIVE</span>
                                             </td>
                                         </tr>
                                         <tr class="hover:bg-slate-50 transition-colors">
@@ -473,18 +450,18 @@
         </div>
     </section>
 
-    <!-- 4. BEDSIDE ROUNDS MOBILE APP (Original Index Content) -->
+    <!-- 4. BEDSIDE ROUNDS MOBILE APP -->
     <section id="product-form" class="py-16 md:py-24 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
 
             <!-- Content Side -->
             <div class="space-y-6 md:space-y-8 max-w-xl order-2 md:order-1">
                 <div>
-                    <p class="text-[10px] font-bold text-blue-700 uppercase tracking-widest mb-3">Clinician Field Tool
+                    <p class="text-[10px] font-bold text-[#6b8f7a] uppercase tracking-widest mb-3">Clinician Field Tool
                     </p>
-                    <h2 class="serif text-3xl md:text-4xl font-bold text-slate-900 leading-tight">2. Bedside Assessment
-                        Engine</h2>
-                    <p class="text-slate-600 text-base md:text-lg mt-4 font-light leading-relaxed">
+                    <h3 class="serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#1f3d2b] leading-tight">
+                        BedsideAssessment Engine</h3>
+                    <p class="text-[#3d5f4d] text-base md:text-lg mt-4 font-light leading-relaxed">
                         The "on-the-floor" companion for daily rounds. Replace fragmented notes with high-fidelity,
                         structured medical forms generated in real-time from your voice.
                     </p>
@@ -494,22 +471,24 @@
                     <div class="flex gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
                         <div
                             class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center shrink-0">
-                            <i data-lucide="file-text" class="w-5 h-5 text-emerald-700"></i>
+                            <i data-lucide="file-text" class="w-5 h-5 text-[#1f3d2b]"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-900 text-sm">Rich Daily Metrics</h4>
-                            <p class="text-[13px] text-slate-500 mt-1 leading-normal">Captures nutrition (PO intake),
+                            <h4 class="font-bold text-[#1f3d2b] text-sm">Rich Daily Metrics</h4>
+                            <p class="text-[13px] text-[#3d5f4d] mt-1 leading-normal font-light">Captures nutrition (PO
+                                intake),
                                 Blood Sugar, ADLs, and mood in a single verbal workflow.</p>
                         </div>
                     </div>
                     <div class="flex gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
                         <div
                             class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center shrink-0">
-                            <i data-lucide="eye-off" class="w-5 h-5 text-blue-700"></i>
+                            <i data-lucide="eye-off" class="w-5 h-5 text-[#6b8f7a]"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-900 text-sm">Clutter-Free Interface</h4>
-                            <p class="text-[13px] text-slate-500 mt-1 leading-normal">Transcripts are hidden by default
+                            <h4 class="font-bold text-[#1f3d2b] text-sm">Clutter-Free Interface</h4>
+                            <p class="text-[13px] text-[#3d5f4d] mt-1 leading-normal font-light">Transcripts are hidden
+                                by default
                                 to keep the clinician focused on the structured clinical fields.</p>
                         </div>
                     </div>
@@ -519,8 +498,9 @@
                             <i data-lucide="zap" class="w-5 h-5 text-amber-500"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-900 text-sm">Smart Clinical Flags</h4>
-                            <p class="text-[13px] text-slate-500 mt-1 leading-normal">Automatically identifies anomalies
+                            <h4 class="font-bold text-[#1f3d2b] text-sm">Smart Clinical Flags</h4>
+                            <p class="text-[13px] text-[#3d5f4d] mt-1 leading-normal font-light">Automatically
+                                identifies anomalies
                                 like hyperglycemic trends or respiratory labor.</p>
                         </div>
                     </div>
@@ -537,7 +517,7 @@
                         <div class="px-5 py-5 flex items-center justify-between border-b bg-white">
                             <div class="flex items-center gap-3">
                                 <div
-                                    class="w-10 h-10 rounded-full bg-emerald-700 flex items-center justify-center text-white font-bold text-xs">
+                                    class="w-10 h-10 rounded-full bg-[#1f3d2b] flex items-center justify-center text-white font-bold text-xs">
                                     EM</div>
                                 <div>
                                     <p class="text-xs font-bold text-slate-900 leading-tight">Eleanor Mayberry</p>
@@ -645,7 +625,7 @@
                                     </div>
                                 </div>
                                 <p
-                                    class="text-[10px] font-bold text-emerald-700 mt-4 animate-pulse uppercase tracking-[0.2em]">
+                                    class="text-[10px] font-bold text-[#1f3d2b] mt-4 animate-pulse uppercase tracking-[0.2em]">
                                     Live Assessment...</p>
                             </div>
                             <button
@@ -659,7 +639,7 @@
         </div>
     </section>
 
-    <!-- 5. FORM BUILDER (From Salvia-Complete) -->
+    <!-- 5. FORM BUILDER (REFERENCE SECTION) -->
     <section id="builder" class="py-16 md:py-32 px-4 md:px-6 bg-white">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
             <div>
@@ -673,13 +653,17 @@
                     structures.
                 </p>
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="p-4 bg-[#f7f9f6] rounded-2xl border border-gray-100 text-sm font-bold">Multiple Input
+                    <div class="p-4 bg-[#f7f9f6] rounded-2xl border border-gray-100 text-sm font-bold text-[#1f3d2b]">
+                        Multiple Input
                         Types</div>
-                    <div class="p-4 bg-[#f7f9f6] rounded-2xl border border-gray-100 text-sm font-bold">Logic Validation
+                    <div class="p-4 bg-[#f7f9f6] rounded-2xl border border-gray-100 text-sm font-bold text-[#1f3d2b]">
+                        Logic Validation
                     </div>
-                    <div class="p-4 bg-[#f7f9f6] rounded-2xl border border-gray-100 text-sm font-bold">API Integration
+                    <div class="p-4 bg-[#f7f9f6] rounded-2xl border border-gray-100 text-sm font-bold text-[#1f3d2b]">
+                        API Integration
                     </div>
-                    <div class="p-4 bg-[#f7f9f6] rounded-2xl border border-gray-100 text-sm font-bold">Versioning</div>
+                    <div class="p-4 bg-[#f7f9f6] rounded-2xl border border-gray-100 text-sm font-bold text-[#1f3d2b]">
+                        Versioning</div>
                 </div>
             </div>
             <div class="relative group mt-8 md:mt-0">
@@ -688,7 +672,7 @@
                 </div>
                 <div class="relative bg-white p-6 md:p-10 rounded-[40px] shadow-xl border border-gray-100">
                     <div class="flex items-center justify-between mb-10">
-                        <div class="text-sm font-serif font-bold">Template: Post-Op Quick</div>
+                        <div class="text-sm font-serif font-bold text-[#1f3d2b]">Template: Post-Op Quick</div>
                         <span
                             class="px-3 py-1 bg-green-50 text-green-700 text-[10px] font-bold rounded-full">ACTIVE</span>
                     </div>
@@ -698,21 +682,21 @@
                             <div
                                 class="w-8 h-8 rounded bg-white border border-gray-200 flex items-center justify-center text-xs shrink-0">
                                 Abc</div>
-                            <div class="flex-1 text-sm font-medium">Chief Complaint Summary</div>
+                            <div class="flex-1 text-sm font-medium text-[#1f3d2b]">Chief Complaint Summary</div>
                         </div>
                         <div
                             class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-dashed border-gray-200">
                             <div
                                 class="w-8 h-8 rounded bg-white border border-gray-200 flex items-center justify-center text-xs shrink-0">
                                 01</div>
-                            <div class="flex-1 text-sm font-medium">Pain Score (1-10)</div>
+                            <div class="flex-1 text-sm font-medium text-[#1f3d2b]">Pain Score (1-10)</div>
                         </div>
                         <div
                             class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-dashed border-gray-200">
                             <div
                                 class="w-8 h-8 rounded bg-white border border-gray-200 flex items-center justify-center text-xs shrink-0">
                                 ✓</div>
-                            <div class="flex-1 text-sm font-medium">Red Flags Absent</div>
+                            <div class="flex-1 text-sm font-medium text-[#1f3d2b]">Red Flags Absent</div>
                         </div>
                     </div>
                 </div>
@@ -720,54 +704,57 @@
         </div>
     </section>
 
-    <!-- 6. ANALYTICS / INSIGHTS (From Salvia-Complete) -->
+    <!-- 6. ANALYTICS / INSIGHTS -->
     <section id="analytics" class="py-16 md:py-32 px-4 md:px-6 bg-[#f7f9f6]">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-8">
                 <div class="max-w-2xl">
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-[#1f3d2b]">System-wide Insights.</h2>
-                    <p class="text-[#3d5f4d] mt-4 text-base md:text-lg">Identify trends across your entire organization.
+                    <p class="text-[#3d5f4d] mt-4 text-base md:text-lg font-light leading-relaxed">Identify trends
+                        across your entire organization.
                         Monitor care
                         quality, staff workload, and documentation efficiency in real-time.</p>
                 </div>
                 <button
-                    class="px-8 py-4 rounded-full bg-[#1f3d2b] text-white font-bold text-xs uppercase tracking-widest w-full md:w-auto">Explore
+                    class="px-8 py-4 rounded-full bg-[#1f3d2b] text-white font-bold text-xs uppercase tracking-widest w-full md:w-auto hover:bg-[#2f5a43] transition-colors">Explore
                     Analytics</button>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6 md:gap-8">
                 <div class="bg-white p-8 rounded-3xl shadow-sm">
-                    <div class="text-[#6b8f7a] text-xs font-bold mb-4 uppercase">Productivity</div>
-                    <div class="text-4xl font-serif mb-2">4.2 hrs</div>
-                    <p class="text-sm text-[#3d5f4d]">Saved per clinician/week on average.</p>
+                    <div class="text-[#6b8f7a] text-xs font-bold mb-4 uppercase tracking-widest">Productivity</div>
+                    <div class="text-4xl font-serif mb-2 text-[#1f3d2b]">4.2 hrs</div>
+                    <p class="text-sm text-[#3d5f4d] font-light">Saved per clinician/week on average.</p>
                 </div>
                 <div class="bg-white p-8 rounded-3xl shadow-sm">
-                    <div class="text-[#6b8f7a] text-xs font-bold mb-4 uppercase">Accuracy</div>
-                    <div class="text-4xl font-serif mb-2">99.1%</div>
-                    <p class="text-sm text-[#3d5f4d]">Matching accuracy for structured vitals.</p>
+                    <div class="text-[#6b8f7a] text-xs font-bold mb-4 uppercase tracking-widest">Accuracy</div>
+                    <div class="text-4xl font-serif mb-2 text-[#1f3d2b]">99.1%</div>
+                    <p class="text-sm text-[#3d5f4d] font-light">Matching accuracy for structured vitals.</p>
                 </div>
                 <div class="bg-white p-8 rounded-3xl shadow-sm">
-                    <div class="text-[#6b8f7a] text-xs font-bold mb-4 uppercase">Verification Rate</div>
-                    <div class="text-4xl font-serif mb-2">12m</div>
-                    <p class="text-sm text-[#3d5f4d]">Average time from audio to verified record.</p>
+                    <div class="text-[#6b8f7a] text-xs font-bold mb-4 uppercase tracking-widest">Verification Rate</div>
+                    <div class="text-4xl font-serif mb-2 text-[#1f3d2b]">12m</div>
+                    <p class="text-sm text-[#3d5f4d] font-light">Average time from audio to verified record.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 7. THE ONE REASON (Original Index Content) -->
+    <!-- 7. THE ONE REASON -->
     <section id="problem" class="py-16 md:py-24 bg-white/50">
         <div class="mx-auto max-w-7xl px-4 md:px-6">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h2 class="text-base font-semibold leading-7 text-[#2f5a43] uppercase tracking-widest">The Core
+                    <h2 class="text-xs font-bold leading-7 text-[#6b8f7a] uppercase tracking-widest">The Core
                         Problem</h2>
-                    <p class="mt-2 font-serif text-3xl md:text-4xl font-bold text-slate-900 leading-tight">The #1 reason
+                    <p class="mt-2 font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#1f3d2b] leading-tight">
+                        The #1 reason
                         to use
                         Salvia:
-                        <br><span class="text-[#2f5a43] italic">Clinical Burnout is Optional.</span>
+                        <br><span class="text-[#6b8f7a] italic">Clinical Burnout is Optional.</span>
                     </p>
-                    <p class="mt-6 text-base md:text-lg text-slate-600">Healthcare professionals spend up to 40% of
+                    <p class="mt-6 text-base md:text-lg text-[#3d5f4d] font-light leading-relaxed">Healthcare
+                        professionals spend up to 40% of
                         their day on
                         administrative data entry. This "documentation debt" leads to fatigue, errors, and less time for
                         patients. Salvia resolves this by making documentation a natural byproduct of your care, not a
@@ -779,17 +766,18 @@
                                 class="text-red-600"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold">Before Salvia</h4>
-                            <p class="text-sm text-slate-500">"Pajama time" charting, fragmented notes, and
+                            <h4 class="font-bold text-[#1f3d2b]">Before Salvia</h4>
+                            <p class="text-sm text-[#3d5f4d] font-light">"Pajama time" charting, fragmented notes, and
                                 administrative exhaustion.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
                         <div class="bg-emerald-100 p-3 rounded-full shrink-0"><i data-lucide="check-circle"
-                                class="text-emerald-600"></i></div>
+                                class="text-[#1f3d2b]"></i></div>
                         <div>
-                            <h4 class="font-bold text-[#2f5a43]">After Salvia</h4>
-                            <p class="text-sm text-slate-500">Instant structured notes, 100% compliance, and more focus
+                            <h4 class="font-bold text-[#1f3d2b]">After Salvia</h4>
+                            <p class="text-sm text-[#3d5f4d] font-light">Instant structured notes, 100% compliance, and
+                                more focus
                                 on the human in front of you.</p>
                         </div>
                     </div>
@@ -804,40 +792,45 @@
             <div class="md:col-span-1">
                 <span class="text-[#6b8f7a] uppercase tracking-widest text-xs font-bold">Uncompromising</span>
                 <h2 class="text-3xl md:text-4xl font-serif text-[#1f3d2b] mt-4 mb-6">Built for HIPAA & GDPR.</h2>
-                <p class="text-[#3d5f4d] leading-relaxed">Medical data is sacred. We treat security not as a feature,
+                <p class="text-[#3d5f4d] font-light leading-relaxed">Medical data is sacred. We treat security not as a
+                    feature,
                     but as the foundation of every line of code we write.</p>
             </div>
             <div class="md:col-span-2 grid sm:grid-cols-2 gap-6 md:gap-8">
                 <div class="p-6 md:p-8 border border-gray-100 rounded-2xl bg-white">
                     <h4 class="font-bold text-[#1f3d2b] mb-2">End-to-End Encryption</h4>
-                    <p class="text-sm text-[#3d5f4d]">Audio and transcripts are encrypted in transit and at rest using
+                    <p class="text-sm text-[#3d5f4d] font-light">Audio and transcripts are encrypted in transit and at
+                        rest using
                         AES-256 standards.</p>
                 </div>
                 <div class="p-6 md:p-8 border border-gray-100 rounded-2xl bg-white">
                     <h4 class="font-bold text-[#1f3d2b] mb-2">Zero-Knowledge Storage</h4>
-                    <p class="text-sm text-[#3d5f4d]">Your organization owns the keys. We cannot access raw patient data
+                    <p class="text-sm text-[#3d5f4d] font-light">Your organization owns the keys. We cannot access raw
+                        patient data
                         without your explicit permission.</p>
                 </div>
                 <div class="p-6 md:p-8 border border-gray-100 rounded-2xl bg-white">
                     <h4 class="font-bold text-[#1f3d2b] mb-2">Audit Trails</h4>
-                    <p class="text-sm text-[#3d5f4d]">Every access, every edit, and every verification is logged in an
+                    <p class="text-sm text-[#3d5f4d] font-light">Every access, every edit, and every verification is
+                        logged in an
                         immutable ledger.</p>
                 </div>
                 <div class="p-6 md:p-8 border border-gray-100 rounded-2xl bg-white">
                     <h4 class="font-bold text-[#1f3d2b] mb-2">PII Masking</h4>
-                    <p class="text-sm text-[#3d5f4d]">Optional automatic redaction of personal identifiers for research
+                    <p class="text-sm text-[#3d5f4d] font-light">Optional automatic redaction of personal identifiers
+                        for research
                         or training purposes.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 9. TESTIMONIALS (Original Index Content) -->
+    <!-- 9. TESTIMONIALS -->
     <section class="py-16 md:py-24 bg-white">
         <div class="mx-auto max-w-7xl px-4 md:px-6">
             <div class="text-center mb-12 md:mb-16">
-                <h2 class="font-serif text-3xl md:text-4xl font-bold text-slate-900">What our customers are saying</h2>
-                <p class="text-slate-500 mt-4">Clinical specialists love saving time with Salvia.</p>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-[#1f3d2b]">What our customers are saying</h2>
+                <p class="text-[#3d5f4d] font-light mt-4">Clinical specialists love saving time with Salvia.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-6 md:gap-8">
                 <div class="bg-[#f7f9f6] p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100">
@@ -848,13 +841,14 @@
                         <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
                         <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
                     </div>
-                    <p class="text-slate-600 italic mb-6">"Salvia has completely changed my clinic flow. I no longer
+                    <p class="text-[#3d5f4d] font-light italic mb-6">"Salvia has completely changed my clinic flow. I no
+                        longer
                         spend 2 hours every evening finishing my notes. It's accurate, fast, and secure."</p>
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 rounded-full bg-slate-200"></div>
                         <div>
-                            <p class="text-sm font-bold">Dr. Sarah Chen</p>
-                            <p class="text-xs text-slate-400">Family Physician</p>
+                            <p class="text-sm font-bold text-[#1f3d2b]">Dr. Sarah Chen</p>
+                            <p class="text-xs text-[#6b8f7a]">Family Physician</p>
                         </div>
                     </div>
                 </div>
@@ -866,13 +860,14 @@
                         <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
                         <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
                     </div>
-                    <p class="text-slate-600 italic mb-6">"The structured forms are a game-changer. It doesn't just
+                    <p class="text-[#3d5f4d] font-light italic mb-6">"The structured forms are a game-changer. It
+                        doesn't just
                         transcribe; it understands the clinical context. My audit compliance has never been better."</p>
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 rounded-full bg-slate-200"></div>
                         <div>
-                            <p class="text-sm font-bold">Marcus Thorne</p>
-                            <p class="text-xs text-slate-400">Lead Physiotherapist</p>
+                            <p class="text-sm font-bold text-[#1f3d2b]">Marcus Thorne</p>
+                            <p class="text-xs text-[#6b8f7a]">Lead Physiotherapist</p>
                         </div>
                     </div>
                 </div>
@@ -884,13 +879,14 @@
                         <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
                         <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
                     </div>
-                    <p class="text-slate-600 italic mb-6">"The privacy features are what sold us. Knowing we can
+                    <p class="text-[#3d5f4d] font-light italic mb-6">"The privacy features are what sold us. Knowing we
+                        can
                         self-host and that our data isn't used for training makes all the difference for our trust."</p>
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 rounded-full bg-slate-200"></div>
                         <div>
-                            <p class="text-sm font-bold">Elena Rodriguez</p>
-                            <p class="text-xs text-slate-400">Clinic Director</p>
+                            <p class="text-sm font-bold text-[#1f3d2b]">Elena Rodriguez</p>
+                            <p class="text-xs text-[#6b8f7a]">Clinic Director</p>
                         </div>
                     </div>
                 </div>
@@ -898,12 +894,12 @@
         </div>
     </section>
 
-    <!-- 10. PRICING (REDESIGNED: High-End Medical Cards) -->
+    <!-- 10. PRICING -->
     <section id="pricing" class="py-16 md:py-24 bg-[#f7f9f6]">
         <div class="mx-auto max-w-7xl px-4 md:px-6">
             <div class="text-center mb-12 md:mb-16">
-                <h2 class="font-serif text-3xl md:text-4xl font-bold text-slate-900">Simple, transparent pricing.</h2>
-                <p class="text-slate-500 mt-4">Choose the plan that fits your practice scale.</p>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-[#1f3d2b]">Simple, transparent pricing.</h2>
+                <p class="text-[#3d5f4d] font-light mt-4">Choose the plan that fits your practice scale.</p>
             </div>
             <!-- Grid for 4 tiers -->
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
@@ -916,45 +912,46 @@
                     </div>
 
                     <h4
-                        class="font-serif font-bold text-xl mb-2 text-slate-900 group-hover:text-[#1f3d2b] transition-colors">
+                        class="font-serif font-bold text-xl mb-2 text-[#1f3d2b] group-hover:text-[#1f3d2b] transition-colors">
                         Starter</h4>
-                    <p class="text-slate-500 text-xs mb-8 h-8 leading-normal">Essential documentation tools for solo
+                    <p class="text-[#3d5f4d] font-light text-xs mb-8 h-8 leading-normal">Essential documentation tools
+                        for solo
                         practitioners.</p>
 
                     <div class="mb-8">
                         <div class="flex items-baseline">
-                            <span class="text-4xl font-serif font-bold text-slate-900">$29</span>
-                            <span class="text-slate-400 text-xs ml-1">/mo</span>
+                            <span class="text-4xl font-serif font-bold text-[#1f3d2b]">$29</span>
+                            <span class="text-[#6b8f7a] text-xs ml-1">/mo</span>
                         </div>
-                        <div class="text-[10px] text-slate-400 mt-1 font-medium tracking-wide">billed annually ($299)
+                        <div class="text-[10px] text-[#6b8f7a] mt-1 font-medium tracking-wide">billed annually ($299)
                         </div>
                     </div>
 
-                    <ul class="space-y-4 text-xs text-slate-600 mb-8 flex-1">
+                    <ul class="space-y-4 text-xs text-[#3d5f4d] font-light mb-8 flex-1">
                         <li class="flex items-start gap-3">
                             <div
                                 class="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-3 h-3 text-emerald-600"></i>
+                                <i data-lucide="check" class="w-3 h-3 text-[#1f3d2b]"></i>
                             </div>
                             <span class="leading-tight"><strong>150 Notes</strong> / month</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <div
                                 class="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-3 h-3 text-emerald-600"></i>
+                                <i data-lucide="check" class="w-3 h-3 text-[#1f3d2b]"></i>
                             </div>
                             <span class="leading-tight">Standard Templates</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <div
                                 class="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-3 h-3 text-emerald-600"></i>
+                                <i data-lucide="check" class="w-3 h-3 text-[#1f3d2b]"></i>
                             </div>
                             <span class="leading-tight">Secure Cloud Vault</span>
                         </li>
                     </ul>
                     <button
-                        class="w-full py-4 rounded-xl border border-slate-200 bg-slate-50 font-bold text-slate-600 text-xs tracking-wider uppercase hover:bg-[#1f3d2b] hover:text-white hover:border-[#1f3d2b] transition-all">Get
+                        class="w-full py-4 rounded-xl border border-slate-200 bg-slate-50 font-bold text-[#1f3d2b] text-xs tracking-wider uppercase hover:bg-[#1f3d2b] hover:text-white hover:border-[#1f3d2b] transition-all">Get
                         Started</button>
                 </div>
 
@@ -970,11 +967,12 @@
                     </div>
 
                     <div
-                        class="absolute top-0 right-8 bg-emerald-500 text-white px-3 py-1.5 rounded-b-lg text-[10px] font-bold tracking-widest uppercase shadow-lg">
+                        class="absolute top-0 right-8 bg-[#6b8f7a] text-white px-3 py-1.5 rounded-b-lg text-[10px] font-bold tracking-widest uppercase shadow-lg">
                         Most Popular</div>
 
                     <h4 class="font-serif font-bold text-xl mb-2 relative z-10">Professional</h4>
-                    <p class="text-emerald-100/70 text-xs mb-8 h-8 leading-normal relative z-10">For busy specialists
+                    <p class="text-emerald-100/70 text-xs mb-8 h-8 leading-normal relative z-10 font-light">For busy
+                        specialists
                         needing scale and custom forms.</p>
 
                     <div class="mb-8 relative z-10">
@@ -986,7 +984,7 @@
                             ($799)</div>
                     </div>
 
-                    <ul class="space-y-4 text-xs text-emerald-50 mb-8 flex-1 relative z-10">
+                    <ul class="space-y-4 text-xs text-emerald-50 mb-8 flex-1 relative z-10 font-light">
                         <li class="flex items-start gap-3">
                             <div
                                 class="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0 mt-0.5">
@@ -1010,7 +1008,7 @@
                         </li>
                     </ul>
                     <button
-                        class="w-full py-4 rounded-xl bg-emerald-500 font-bold text-white text-xs tracking-wider uppercase hover:bg-emerald-400 transition-all shadow-lg hover:shadow-emerald-500/25 relative z-10">Start
+                        class="w-full py-4 rounded-xl bg-[#6b8f7a] font-bold text-white text-xs tracking-wider uppercase hover:bg-[#5a8a6e] transition-all shadow-lg hover:shadow-emerald-500/25 relative z-10">Start
                         Free Trial</button>
                 </div>
 
@@ -1022,45 +1020,46 @@
                     </div>
 
                     <h4
-                        class="font-serif font-bold text-xl mb-2 text-slate-900 group-hover:text-[#1f3d2b] transition-colors">
+                        class="font-serif font-bold text-xl mb-2 text-[#1f3d2b] group-hover:text-[#1f3d2b] transition-colors">
                         Clinic</h4>
-                    <p class="text-slate-500 text-xs mb-8 h-8 leading-normal">Advanced analytics and roster tools for
+                    <p class="text-[#3d5f4d] font-light text-xs mb-8 h-8 leading-normal">Advanced analytics and roster
+                        tools for
                         small teams.</p>
 
                     <div class="mb-8">
                         <div class="flex items-baseline">
-                            <span class="text-4xl font-serif font-bold text-slate-900">$149</span>
-                            <span class="text-slate-400 text-xs ml-1">/mo</span>
+                            <span class="text-4xl font-serif font-bold text-[#1f3d2b]">$149</span>
+                            <span class="text-[#6b8f7a] text-xs ml-1">/mo</span>
                         </div>
-                        <div class="text-[10px] text-slate-400 mt-1 font-medium tracking-wide">billed annually ($1,499)
+                        <div class="text-[10px] text-[#6b8f7a] mt-1 font-medium tracking-wide">billed annually ($1,499)
                         </div>
                     </div>
 
-                    <ul class="space-y-4 text-xs text-slate-600 mb-8 flex-1">
+                    <ul class="space-y-4 text-xs text-[#3d5f4d] font-light mb-8 flex-1">
                         <li class="flex items-start gap-3">
                             <div
                                 class="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-3 h-3 text-emerald-600"></i>
+                                <i data-lucide="check" class="w-3 h-3 text-[#1f3d2b]"></i>
                             </div>
                             <span class="leading-tight"><strong>Unlimited</strong> Notes</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <div
                                 class="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-3 h-3 text-emerald-600"></i>
+                                <i data-lucide="check" class="w-3 h-3 text-[#1f3d2b]"></i>
                             </div>
                             <span class="leading-tight">Team Analytics Dashboard</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <div
                                 class="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-3 h-3 text-emerald-600"></i>
+                                <i data-lucide="check" class="w-3 h-3 text-[#1f3d2b]"></i>
                             </div>
                             <span class="leading-tight">Direct EHR Integrations</span>
                         </li>
                     </ul>
                     <button
-                        class="w-full py-4 rounded-xl border border-slate-200 bg-slate-50 font-bold text-slate-600 text-xs tracking-wider uppercase hover:bg-[#1f3d2b] hover:text-white hover:border-[#1f3d2b] transition-all">Contact
+                        class="w-full py-4 rounded-xl border border-slate-200 bg-slate-50 font-bold text-[#1f3d2b] text-xs tracking-wider uppercase hover:bg-[#1f3d2b] hover:text-white hover:border-[#1f3d2b] transition-all">Contact
                         Sales</button>
                 </div>
 
@@ -1072,52 +1071,54 @@
                     </div>
 
                     <h4
-                        class="font-serif font-bold text-xl mb-2 text-slate-900 group-hover:text-[#1f3d2b] transition-colors">
+                        class="font-serif font-bold text-xl mb-2 text-[#1f3d2b] group-hover:text-[#1f3d2b] transition-colors">
                         Enterprise</h4>
-                    <p class="text-slate-500 text-xs mb-8 h-8 leading-normal">Full control, security, and self-hosting
+                    <p class="text-[#3d5f4d] font-light text-xs mb-8 h-8 leading-normal">Full control, security, and
+                        self-hosting
                         for large orgs.</p>
 
                     <div class="mb-8">
                         <div class="flex items-baseline">
-                            <span class="text-4xl font-serif font-bold text-slate-900">$299</span>
-                            <span class="text-slate-400 text-xs ml-1">/mo</span>
+                            <span class="text-4xl font-serif font-bold text-[#1f3d2b]">$299</span>
+                            <span class="text-[#6b8f7a] text-xs ml-1">/mo</span>
                         </div>
-                        <div class="text-[10px] text-slate-400 mt-1 font-medium tracking-wide">billed annually ($2,999)
+                        <div class="text-[10px] text-[#6b8f7a] mt-1 font-medium tracking-wide">billed annually ($2,999)
                         </div>
                     </div>
 
-                    <ul class="space-y-4 text-xs text-slate-600 mb-8 flex-1">
+                    <ul class="space-y-4 text-xs text-[#3d5f4d] font-light mb-8 flex-1">
                         <li class="flex items-start gap-3">
                             <div
                                 class="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-3 h-3 text-emerald-600"></i>
+                                <i data-lucide="check" class="w-3 h-3 text-[#1f3d2b]"></i>
                             </div>
                             <span class="leading-tight"><strong>Unlimited</strong> Notes</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <div
                                 class="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-3 h-3 text-emerald-600"></i>
+                                <i data-lucide="check" class="w-3 h-3 text-[#1f3d2b]"></i>
                             </div>
                             <span class="leading-tight">SSO / SAML Enforcement</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <div
                                 class="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-3 h-3 text-emerald-600"></i>
+                                <i data-lucide="check" class="w-3 h-3 text-[#1f3d2b]"></i>
                             </div>
                             <span class="leading-tight">Self-Hosting Option</span>
                         </li>
                     </ul>
                     <button
-                        class="w-full py-4 rounded-xl border border-slate-200 bg-slate-50 font-bold text-slate-600 text-xs tracking-wider uppercase hover:bg-[#1f3d2b] hover:text-white hover:border-[#1f3d2b] transition-all">Book
+                        class="w-full py-4 rounded-xl border border-slate-200 bg-slate-50 font-bold text-[#1f3d2b] text-xs tracking-wider uppercase hover:bg-[#1f3d2b] hover:text-white hover:border-[#1f3d2b] transition-all">Book
                         Demo</button>
                 </div>
 
             </div>
 
             <div class="mt-16 text-center">
-                <p class="text-slate-500 font-medium">Join 15,000+ others who spend less time on documentation.</p>
+                <p class="text-[#3d5f4d] font-light font-medium">Join 15,000+ others who spend less time on
+                    documentation.</p>
                 <div class="flex justify-center gap-2 mt-4 grayscale opacity-50">
                     <i data-lucide="award" class="w-6 h-6"></i>
                     <i data-lucide="award" class="w-6 h-6"></i>
@@ -1127,7 +1128,7 @@
         </div>
     </section>
 
-    <!-- 11. FOOTER (UPDATED: Premium Dark Theme with Glowing Attractor) -->
+    <!-- 11. FOOTER -->
     <footer class="relative bg-[#1f3d2b] text-white pt-16 md:pt-24 pb-12 overflow-hidden">
         <!-- Optional: Subtle top border gradient -->
         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1f3d2b] via-[#2f5a43] to-[#1f3d2b]"></div>
@@ -1149,13 +1150,13 @@
 
                     <!-- Newsletter Input -->
                     <div class="max-w-sm">
-                        <label class="text-[10px] font-bold uppercase tracking-widest text-emerald-400 mb-3 block">Stay
+                        <label class="text-[10px] font-bold uppercase tracking-widest text-[#6b8f7a] mb-3 block">Stay
                             Updated</label>
                         <div class="flex gap-2">
                             <input type="email" placeholder="email@hospital.org"
-                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-emerald-500 transition-colors">
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-[#6b8f7a] transition-colors">
                             <button
-                                class="bg-emerald-500 text-[#1f3d2b] px-6 py-3 rounded-xl text-sm font-bold hover:bg-emerald-400 transition-colors">
+                                class="bg-[#6b8f7a] text-[#1f3d2b] px-6 py-3 rounded-xl text-sm font-bold hover:bg-[#5a8a6e] transition-colors">
                                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </button>
                         </div>
@@ -1168,7 +1169,7 @@
                 <!-- Right Column: Links & Attractor Space (Span 6) -->
                 <div class="lg:col-span-6 grid grid-cols-2 sm:grid-cols-3 gap-8">
                     <div>
-                        <h5 class="font-bold text-xs uppercase tracking-[0.2em] text-emerald-400 mb-6">Platform</h5>
+                        <h5 class="font-bold text-xs uppercase tracking-[0.2em] text-[#6b8f7a] mb-6">Platform</h5>
                         <ul class="space-y-4 text-sm text-emerald-100/60 font-medium">
                             <li><a href="#workflow"
                                     class="hover:text-white transition-colors flex items-center gap-2">Workflow</a></li>
@@ -1183,18 +1184,18 @@
                         </ul>
                     </div>
                     <div>
-                        <h5 class="font-bold text-xs uppercase tracking-[0.2em] text-emerald-400 mb-6">Company</h5>
+                        <h5 class="font-bold text-xs uppercase tracking-[0.2em] text-[#6b8f7a] mb-6">Company</h5>
                         <ul class="space-y-4 text-sm text-emerald-100/60 font-medium">
                             <li><a href="#" class="hover:text-white transition-colors">Mission</a></li>
                             <li><a href="#" class="hover:text-white transition-colors">Careers <span
-                                        class="text-[9px] bg-emerald-500/20 text-emerald-300 px-1.5 py-0.5 rounded ml-1">HIRING</span></a>
+                                        class="text-[9px] bg-[#6b8f7a]/20 text-[#6b8f7a] px-1.5 py-0.5 rounded ml-1">HIRING</span></a>
                             </li>
                             <li><a href="#" class="hover:text-white transition-colors">Ethics</a></li>
                             <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h5 class="font-bold text-xs uppercase tracking-[0.2em] text-emerald-400 mb-6">Resources</h5>
+                        <h5 class="font-bold text-xs uppercase tracking-[0.2em] text-[#6b8f7a] mb-6">Resources</h5>
                         <ul class="space-y-4 text-sm text-emerald-100/60 font-medium">
                             <li><a href="#" class="hover:text-white transition-colors">Documentation</a></li>
                             <li><a href="#" class="hover:text-white transition-colors">API Reference</a></li>
@@ -1213,7 +1214,7 @@
                 class="flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest text-emerald-100/30 font-bold">
                 <div class="flex items-center gap-2 text-center md:text-left">
                     <span>© 2025 OFF BY 2.</span>
-                    <span class="w-1 h-1 rounded-full bg-emerald-500/50"></span>
+                    <span class="w-1 h-1 rounded-full bg-[#6b8f7a]/50"></span>
                     <span>All rights reserved.</span>
                 </div>
                 <div class="flex gap-4 md:gap-8 flex-wrap justify-center">
@@ -1224,7 +1225,7 @@
             </div>
         </div>
 
-        <!-- Attractor Canvas: Positioned Absolute for Ambient Effect -->
+        <!-- Attractor Canvas -->
         <div
             class="absolute bottom-10 right-10 md:right-20 w-[300px] h-[300px] md:w-[500px] md:h-[500px] pointer-events-none opacity-40 md:opacity-60 translate-x-1/4 translate-y-1/4 mix-blend-screen">
             <canvas id="footer-flower" class="w-full h-full"></canvas>
