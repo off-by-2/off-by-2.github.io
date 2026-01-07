@@ -52,8 +52,9 @@
         }
 
         .salvia-blob {
-            width: 140px;
-            height: 140px;
+            width: 100px;
+            /* Smaller on mobile default */
+            height: 100px;
             background: linear-gradient(135deg, #5a8a6e 0%, #1f3d2b 100%);
             border-radius: 50%;
             display: flex;
@@ -68,6 +69,13 @@
             transform: translate(-50%, -50%);
             z-index: 10;
             animation: morphBlob 8s ease-in-out infinite;
+        }
+
+        @media (min-width: 768px) {
+            .salvia-blob {
+                width: 140px;
+                height: 140px;
+            }
         }
 
         @keyframes morphBlob {
@@ -99,13 +107,22 @@
 
         .viz-label {
             position: absolute;
-            bottom: 2rem;
+            bottom: 1.5rem;
+            /* Adjusted for mobile */
             font-family: 'Inter', sans-serif;
             pointer-events: none;
+            width: auto;
+        }
+
+        @media (min-width: 768px) {
+            .viz-label {
+                bottom: 2rem;
+            }
         }
 
         .viz-label .title {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
+            /* Smaller on mobile */
             text-transform: uppercase;
             letter-spacing: 0.15em;
             color: #8b7355;
@@ -114,16 +131,29 @@
             display: block;
         }
 
+        @media (min-width: 768px) {
+            .viz-label .title {
+                font-size: 0.7rem;
+            }
+        }
+
         .viz-label.right .title {
             color: #2f5a43;
             text-align: right;
         }
 
         .viz-label .desc {
-            font-size: 0.9rem;
+            font-size: 0.75rem;
+            /* Smaller on mobile */
             color: #1f3d2b;
             font-weight: 500;
             display: block;
+        }
+
+        @media (min-width: 768px) {
+            .viz-label .desc {
+                font-size: 0.9rem;
+            }
         }
 
         .viz-label.right .desc {
@@ -154,6 +184,37 @@
         .dashboard-window {
             box-shadow: 0 50px 100px -20px rgba(26, 58, 42, 0.15), 0 30px 60px -30px rgba(0, 0, 0, 0.1);
         }
+
+        /* Mobile Menu Transitions */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+
+        .mobile-frame {
+            border: 8px solid #1f2937;
+            border-radius: 36px;
+            overflow: hidden;
+            position: relative;
+            background: #fff;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            width: 100%;
+            max-width: 320px;
+            height: 600px;
+            margin: 0 auto;
+        }
+
+        .mobile-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 24px;
+            background: #1f2937;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            z-index: 20;
+        }
     </style>
 </head>
 
@@ -161,8 +222,10 @@
 
     <!-- 1. HEADER (From Salvia-Complete) -->
     <nav
-        class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-[#f7f9f6]/90 backdrop-blur-md border-b border-gray-100">
-        <div class="text-2xl font-serif font-bold text-[#1f3d2b]">Salvia.</div>
+        class="fixed top-0 w-full z-50 px-6 md:px-8 py-4 md:py-6 flex justify-between items-center bg-[#f7f9f6]/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+        <div class="text-xl md:text-2xl font-serif font-bold text-[#1f3d2b] relative z-50">Salvia.</div>
+
+        <!-- Desktop Menu -->
         <div class="hidden md:flex gap-10 text-sm font-medium text-[#2f5a43]">
             <a href="#workspace" class="hover:text-[#1f3d2b] transition-colors">Workspace</a>
             <a href="#product-form" class="hover:text-[#1f3d2b] transition-colors">Mobile App</a>
@@ -170,36 +233,65 @@
             <a href="#analytics" class="hover:text-[#1f3d2b] transition-colors">Insights</a>
             <a href="#security" class="hover:text-[#1f3d2b] transition-colors">Security</a>
         </div>
-        <button
-            class="px-6 py-2.5 rounded-full bg-[#1f3d2b] text-white text-xs font-bold uppercase tracking-widest hover:bg-[#2f5a43] transition-all">
-            Book Demo
+
+        <div class="hidden md:block">
+            <button
+                class="px-6 py-2.5 rounded-full bg-[#1f3d2b] text-white text-xs font-bold uppercase tracking-widest hover:bg-[#2f5a43] transition-all">
+                Book Demo
+            </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden relative z-50 text-[#1f3d2b] p-2">
+            <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-[#f7f9f6] z-40 flex flex-col justify-center items-center opacity-0 pointer-events-none translate-y-[-10px]">
+            <div class="flex flex-col items-center gap-8 text-lg font-serif font-medium text-[#1f3d2b]">
+                <a href="#workspace" class="mobile-link hover:text-[#5a8a6e] transition-colors">Workspace</a>
+                <a href="#product-form" class="mobile-link hover:text-[#5a8a6e] transition-colors">Mobile App</a>
+                <a href="#builder" class="mobile-link hover:text-[#5a8a6e] transition-colors">Builder</a>
+                <a href="#analytics" class="mobile-link hover:text-[#5a8a6e] transition-colors">Insights</a>
+                <a href="#security" class="mobile-link hover:text-[#5a8a6e] transition-colors">Security</a>
+                <button
+                    class="mt-4 px-8 py-3 rounded-full bg-[#1f3d2b] text-white text-xs font-bold uppercase tracking-widest hover:bg-[#2f5a43] transition-all mobile-link">
+                    Book Demo
+                </button>
+            </div>
+        </div>
     </nav>
 
     <!-- 2. HERO + 3D (From Salvia-Complete) -->
-    <section class="min-h-[90vh] flex flex-col justify-center items-center px-6 pt-32 pb-20">
-        <div class="max-w-4xl text-center mb-16">
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight text-[#1f3d2b] leading-[1.05]">
+    <section
+        class="min-h-[85vh] md:min-h-[90vh] flex flex-col justify-center items-center px-4 md:px-6 pt-28 md:pt-32 pb-12 md:pb-20 overflow-hidden">
+        <div class="max-w-4xl text-center mb-10 md:mb-16">
+            <h1
+                class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight text-[#1f3d2b] leading-[1.1] md:leading-[1.05]">
                 Stop documenting.<br><span class="italic text-[#5a8a6e]">Start caring.</span>
             </h1>
-            <p class="mt-8 text-xl text-[#3d5f4d] max-w-2xl mx-auto leading-relaxed font-light">
+            <p
+                class="mt-6 md:mt-8 text-base md:text-xl text-[#3d5f4d] max-w-2xl mx-auto leading-relaxed font-light px-2">
                 The intelligent layer between patient care and clinical records. Transforming bedside audio into
                 high-fidelity structured data for your entire organization.
             </p>
         </div>
 
-        <div class="w-full max-w-7xl px-4">
-            <div class="glass-container aspect-[21/9] w-full">
+        <div class="w-full max-w-7xl px-2 md:px-4">
+            <!-- Aspect ratio changed for mobile to be taller -->
+            <div class="glass-container aspect-[4/3] md:aspect-[21/9] w-full">
                 <div class="canvas-wrapper">
                     <canvas id="vortex-canvas"></canvas>
                     <div class="salvia-blob">
-                        <span class="text-white font-serif text-2xl font-semibold tracking-wide">Salvia</span>
+                        <span
+                            class="text-white font-serif text-lg md:text-2xl font-semibold tracking-wide">Salvia</span>
                     </div>
-                    <div class="viz-label left-10">
+                    <div class="viz-label left-4 md:left-10">
                         <span class="title">Input Stream</span>
                         <span class="desc">Chaos & Fragments</span>
                     </div>
-                    <div class="viz-label right right-10">
+                    <div class="viz-label right right-4 md:right-10">
                         <span class="title">Output Stream</span>
                         <span class="desc">Structured Care</span>
                     </div>
@@ -209,185 +301,196 @@
     </section>
 
     <!-- 3. THE WORKSPACE / MANAGEMENT HUB (Original Index Content) -->
-    <section id="workspace" class="py-20 bg-slate-50/50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-12 text-center max-w-3xl mx-auto">
+    <section id="workspace" class="py-16 md:py-20 bg-slate-50/50">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="mb-10 md:mb-12 text-center max-w-3xl mx-auto">
                 <p class="text-[10px] font-bold text-emerald-700 uppercase tracking-widest mb-3">Enterprise
                     Infrastructure</p>
-                <h2 class="font-serif text-4xl font-bold text-slate-900 mb-4">1. The Management Hub</h2>
-                <p class="text-slate-600 text-lg font-light leading-relaxed">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-slate-900 mb-4">1. The Management Hub</h2>
+                <p class="text-slate-600 text-base md:text-lg font-light leading-relaxed">
                     A high-performance explorer designed for administrators and clinical leads to manage organizational
                     hierarchies, staff rosters, and resident directories.
                 </p>
             </div>
 
-            <div
-                class="app-window rounded-2xl bg-white ring-1 ring-slate-200 overflow-hidden max-w-5xl mx-auto border border-slate-200">
-                <!-- Header -->
-                <div class="bg-[#f3f3f3] border-b border-slate-200 h-10 flex items-center px-4 justify-between">
-                    <div class="flex gap-1.5 w-24">
-                        <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-                        <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-                        <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+            <!-- Horizontal Scroll Container for Mobile -->
+            <div class="overflow-x-auto pb-4 md:pb-0 -mx-4 md:mx-0 px-4 md:px-0 scrollbar-hide">
+                <div
+                    class="app-window rounded-2xl bg-white ring-1 ring-slate-200 overflow-hidden min-w-[800px] md:min-w-0 max-w-5xl mx-auto border border-slate-200">
+                    <!-- Header -->
+                    <div class="bg-[#f3f3f3] border-b border-slate-200 h-10 flex items-center px-4 justify-between">
+                        <div class="flex gap-1.5 w-24">
+                            <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                            <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                            <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                        </div>
+                        <div class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em]">Salvia Workspace —
+                            Orchard Health Enterprise</div>
+                        <div class="w-24 flex justify-end">
+                            <i data-lucide="share-2" class="w-3.5 h-3.5 text-slate-400"></i>
+                        </div>
                     </div>
-                    <div class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em]">Salvia Workspace —
-                        Orchard Health Enterprise</div>
-                    <div class="w-24 flex justify-end">
-                        <i data-lucide="share-2" class="w-3.5 h-3.5 text-slate-400"></i>
+
+                    <div class="flex h-[550px]">
+                        <!-- Activity Bar -->
+                        <div class="w-14 vsl-activitybar flex flex-col items-center py-6 gap-8 shrink-0 bg-[#1f3d2b]">
+                            <div class="p-2 bg-white/10 rounded-lg"><i data-lucide="files"
+                                    class="w-5 h-5 text-white"></i>
+                            </div>
+                            <i data-lucide="users"
+                                class="w-5 h-5 text-white/30 hover:text-white transition-colors cursor-pointer"></i>
+                            <i data-lucide="bar-chart-3"
+                                class="w-5 h-5 text-white/30 hover:text-white transition-colors cursor-pointer"></i>
+                            <i data-lucide="settings"
+                                class="w-5 h-5 text-white/30 mt-auto hover:text-white transition-colors cursor-pointer"></i>
+                        </div>
+
+                        <!-- Explorer Sidebar -->
+                        <div
+                            class="w-64 vsl-sidebar flex flex-col shrink-0 text-[12px] text-slate-600 border-r border-slate-100">
+                            <div class="p-4 font-bold uppercase text-[9px] text-slate-400 tracking-wider">Explorer</div>
+                            <div class="overflow-y-auto">
+                                <div class="px-4 py-2 flex items-center gap-2 vsl-tree-hover font-bold text-slate-800">
+                                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                    <i data-lucide="building-2" class="w-4 h-4 text-emerald-700"></i>
+                                    Orchard_Health_Corp
+                                </div>
+                                <div class="ml-4 px-4 py-2 flex items-center gap-2 vsl-tree-hover font-semibold">
+                                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                    <i data-lucide="layout-grid" class="w-4 h-4 text-amber-600"></i>
+                                    North_Region
+                                </div>
+                                <div
+                                    class="ml-8 px-4 py-2 flex items-center gap-2 vsl-tree-hover text-emerald-700 bg-emerald-50 border-l-2 border-emerald-700 font-medium">
+                                    <i data-lucide="users-2" class="w-4 h-4"></i>
+                                    Clinical_Staff.staff
+                                </div>
+                                <div class="ml-8 px-4 py-2 flex items-center gap-2 vsl-tree-hover">
+                                    <i data-lucide="chevron-right" class="w-4 h-4 opacity-50"></i>
+                                    <i data-lucide="user-circle" class="w-4 h-4 text-blue-500"></i>
+                                    Resident_Census
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main View: Staff Management -->
+                        <div class="flex-1 flex flex-col bg-white">
+                            <div
+                                class="h-10 bg-[#ececec] border-b border-slate-200 flex text-[10px] font-medium items-center">
+                                <div
+                                    class="bg-white px-6 h-full flex items-center gap-2 border-r border-slate-200 border-t-2 border-emerald-700">
+                                    <i data-lucide="users-2" class="w-3.5 h-3.5"></i>
+                                    Clinical_Staff.staff
+                                </div>
+                                <div class="px-6 h-full flex items-center gap-2 text-slate-400">
+                                    <i data-lucide="clipboard-check" class="w-3.5 h-3.5"></i>
+                                    Active_Roster.csv
+                                </div>
+                            </div>
+                            <div class="p-8">
+                                <div class="flex justify-between items-center mb-8">
+                                    <div>
+                                        <h3 class="font-bold text-xl text-slate-800">Staff Management</h3>
+                                        <p class="text-xs text-slate-400 mt-1">Showing all active clinicians in North
+                                            Region
+                                        </p>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <button
+                                            class="bg-white border border-slate-200 text-slate-600 text-[11px] px-4 py-2 rounded-lg font-bold hover:bg-slate-50">Export
+                                            PDF</button>
+                                        <button
+                                            class="bg-emerald-700 text-white text-[11px] px-4 py-2 rounded-lg font-bold hover:bg-emerald-800 btn-shadow">+
+                                            Add Member</button>
+                                    </div>
+                                </div>
+                                <table class="w-full text-left text-[13px]">
+                                    <thead class="text-[10px] uppercase text-slate-400 border-b border-slate-100">
+                                        <tr>
+                                            <th class="pb-3 font-bold tracking-widest">Name</th>
+                                            <th class="pb-3 font-bold tracking-widest">Role</th>
+                                            <th class="pb-3 font-bold tracking-widest">Shift Group</th>
+                                            <th class="pb-3 font-bold tracking-widest">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-slate-600">
+                                        <tr class="border-b border-slate-50 hover:bg-slate-50 transition-colors">
+                                            <td class="py-4">
+                                                <div class="flex items-center gap-3">
+                                                    <div
+                                                        class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center font-bold text-emerald-700 text-xs">
+                                                        ER</div>
+                                                    <span class="font-medium text-slate-900">Emily Richardson</span>
+                                                </div>
+                                            </td>
+                                            <td class="py-4 italic">RN / Clinical Lead</td>
+                                            <td class="py-4">Morning / High Care</td>
+                                            <td class="py-4"><span
+                                                    class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-bold">ACTIVE</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-slate-50 hover:bg-slate-50 transition-colors">
+                                            <td class="py-4">
+                                                <div class="flex items-center gap-3">
+                                                    <div
+                                                        class="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center font-bold text-amber-700 text-xs">
+                                                        MV</div>
+                                                    <span class="font-medium text-slate-900">Marcus Vane</span>
+                                                </div>
+                                            </td>
+                                            <td class="py-4 italic">LPN</td>
+                                            <td class="py-4">Post-Acute</td>
+                                            <td class="py-4"><span
+                                                    class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-bold">ACTIVE</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="hover:bg-slate-50 transition-colors">
+                                            <td class="py-4">
+                                                <div class="flex items-center gap-3">
+                                                    <div
+                                                        class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-400 text-xs">
+                                                        SJ</div>
+                                                    <span class="font-medium text-slate-900">Sarah Jenkins</span>
+                                                </div>
+                                            </td>
+                                            <td class="py-4 italic">CNA</td>
+                                            <td class="py-4">Dementia Care</td>
+                                            <td class="py-4"><span
+                                                    class="px-2.5 py-1 rounded-full bg-slate-100 text-slate-500 text-[10px] font-bold">OFF-SHIFT</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="flex h-[550px]">
-                    <!-- Activity Bar -->
-                    <div class="w-14 vsl-activitybar flex flex-col items-center py-6 gap-8 shrink-0 bg-[#1f3d2b]">
-                        <div class="p-2 bg-white/10 rounded-lg"><i data-lucide="files" class="w-5 h-5 text-white"></i>
-                        </div>
-                        <i data-lucide="users"
-                            class="w-5 h-5 text-white/30 hover:text-white transition-colors cursor-pointer"></i>
-                        <i data-lucide="bar-chart-3"
-                            class="w-5 h-5 text-white/30 hover:text-white transition-colors cursor-pointer"></i>
-                        <i data-lucide="settings"
-                            class="w-5 h-5 text-white/30 mt-auto hover:text-white transition-colors cursor-pointer"></i>
-                    </div>
-
-                    <!-- Explorer Sidebar -->
-                    <div class="w-64 vsl-sidebar flex flex-col shrink-0 text-[12px] text-slate-600">
-                        <div class="p-4 font-bold uppercase text-[9px] text-slate-400 tracking-wider">Explorer</div>
-                        <div class="overflow-y-auto">
-                            <div class="px-4 py-2 flex items-center gap-2 vsl-tree-hover font-bold text-slate-800">
-                                <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                                <i data-lucide="building-2" class="w-4 h-4 text-emerald-700"></i>
-                                Orchard_Health_Corp
-                            </div>
-                            <div class="ml-4 px-4 py-2 flex items-center gap-2 vsl-tree-hover font-semibold">
-                                <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                                <i data-lucide="layout-grid" class="w-4 h-4 text-amber-600"></i>
-                                North_Region
-                            </div>
-                            <div
-                                class="ml-8 px-4 py-2 flex items-center gap-2 vsl-tree-hover text-emerald-700 bg-emerald-50 border-l-2 border-emerald-700 font-medium">
-                                <i data-lucide="users-2" class="w-4 h-4"></i>
-                                Clinical_Staff.staff
-                            </div>
-                            <div class="ml-8 px-4 py-2 flex items-center gap-2 vsl-tree-hover">
-                                <i data-lucide="chevron-right" class="w-4 h-4 opacity-50"></i>
-                                <i data-lucide="user-circle" class="w-4 h-4 text-blue-500"></i>
-                                Resident_Census
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Main View: Staff Management -->
-                    <div class="flex-1 flex flex-col bg-white">
-                        <div
-                            class="h-10 bg-[#ececec] border-b border-slate-200 flex text-[10px] font-medium items-center">
-                            <div
-                                class="bg-white px-6 h-full flex items-center gap-2 border-r border-slate-200 border-t-2 border-emerald-700">
-                                <i data-lucide="users-2" class="w-3.5 h-3.5"></i>
-                                Clinical_Staff.staff
-                            </div>
-                            <div class="px-6 h-full flex items-center gap-2 text-slate-400">
-                                <i data-lucide="clipboard-check" class="w-3.5 h-3.5"></i>
-                                Active_Roster.csv
-                            </div>
-                        </div>
-                        <div class="p-8">
-                            <div class="flex justify-between items-center mb-8">
-                                <div>
-                                    <h3 class="font-bold text-xl text-slate-800">Staff Management</h3>
-                                    <p class="text-xs text-slate-400 mt-1">Showing all active clinicians in North Region
-                                    </p>
-                                </div>
-                                <div class="flex gap-2">
-                                    <button
-                                        class="bg-white border border-slate-200 text-slate-600 text-[11px] px-4 py-2 rounded-lg font-bold hover:bg-slate-50">Export
-                                        PDF</button>
-                                    <button
-                                        class="bg-emerald-700 text-white text-[11px] px-4 py-2 rounded-lg font-bold hover:bg-emerald-800 btn-shadow">+
-                                        Add Member</button>
-                                </div>
-                            </div>
-                            <table class="w-full text-left text-[13px]">
-                                <thead class="text-[10px] uppercase text-slate-400 border-b border-slate-100">
-                                    <tr>
-                                        <th class="pb-3 font-bold tracking-widest">Name</th>
-                                        <th class="pb-3 font-bold tracking-widest">Role</th>
-                                        <th class="pb-3 font-bold tracking-widest">Shift Group</th>
-                                        <th class="pb-3 font-bold tracking-widest">Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-slate-600">
-                                    <tr class="border-b border-slate-50 hover:bg-slate-50 transition-colors">
-                                        <td class="py-4">
-                                            <div class="flex items-center gap-3">
-                                                <div
-                                                    class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center font-bold text-emerald-700 text-xs">
-                                                    ER</div>
-                                                <span class="font-medium text-slate-900">Emily Richardson</span>
-                                            </div>
-                                        </td>
-                                        <td class="py-4 italic">RN / Clinical Lead</td>
-                                        <td class="py-4">Morning / High Care</td>
-                                        <td class="py-4"><span
-                                                class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-bold">ACTIVE</span>
-                                        </td>
-                                    </tr>
-                                    <tr class="border-b border-slate-50 hover:bg-slate-50 transition-colors">
-                                        <td class="py-4">
-                                            <div class="flex items-center gap-3">
-                                                <div
-                                                    class="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center font-bold text-amber-700 text-xs">
-                                                    MV</div>
-                                                <span class="font-medium text-slate-900">Marcus Vane</span>
-                                            </div>
-                                        </td>
-                                        <td class="py-4 italic">LPN</td>
-                                        <td class="py-4">Post-Acute</td>
-                                        <td class="py-4"><span
-                                                class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-bold">ACTIVE</span>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover:bg-slate-50 transition-colors">
-                                        <td class="py-4">
-                                            <div class="flex items-center gap-3">
-                                                <div
-                                                    class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-400 text-xs">
-                                                    SJ</div>
-                                                <span class="font-medium text-slate-900">Sarah Jenkins</span>
-                                            </div>
-                                        </td>
-                                        <td class="py-4 italic">CNA</td>
-                                        <td class="py-4">Dementia Care</td>
-                                        <td class="py-4"><span
-                                                class="px-2.5 py-1 rounded-full bg-slate-100 text-slate-500 text-[10px] font-bold">OFF-SHIFT</span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                <div class="text-center text-xs text-slate-400 mt-4 md:hidden">
+                    <span class="inline-flex items-center gap-1"><i data-lucide="arrow-left-right" class="w-3 h-3"></i>
+                        Swipe to explore interface</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 4. BEDSIDE ROUNDS MOBILE APP (Original Index Content) -->
-    <section id="product-form" class="py-24 bg-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    <section id="product-form" class="py-16 md:py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
 
             <!-- Content Side -->
-            <div class="space-y-8 max-w-xl">
+            <div class="space-y-6 md:space-y-8 max-w-xl order-2 md:order-1">
                 <div>
                     <p class="text-[10px] font-bold text-blue-700 uppercase tracking-widest mb-3">Clinician Field Tool
                     </p>
-                    <h2 class="serif text-4xl font-bold text-slate-900 leading-tight">2. Bedside Assessment Engine</h2>
-                    <p class="text-slate-600 text-lg mt-4 font-light leading-relaxed">
+                    <h2 class="serif text-3xl md:text-4xl font-bold text-slate-900 leading-tight">2. Bedside Assessment
+                        Engine</h2>
+                    <p class="text-slate-600 text-base md:text-lg mt-4 font-light leading-relaxed">
                         The "on-the-floor" companion for daily rounds. Replace fragmented notes with high-fidelity,
                         structured medical forms generated in real-time from your voice.
                     </p>
                 </div>
 
-                <div class="space-y-6">
+                <div class="space-y-4 md:space-y-6">
                     <div class="flex gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
                         <div
                             class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center shrink-0">
@@ -425,8 +528,8 @@
             </div>
 
             <!-- Mobile App Side (Right Aligned) -->
-            <div class="flex justify-center md:justify-end">
-                <div class="mobile-frame">
+            <div class="flex justify-center md:justify-end order-1 md:order-2">
+                <div class="mobile-frame transform scale-90 md:scale-100 origin-center">
                     <div class="mobile-notch"></div>
 
                     <div class="h-full flex flex-col pt-8 bg-white">
@@ -557,13 +660,14 @@
     </section>
 
     <!-- 5. FORM BUILDER (From Salvia-Complete) -->
-    <section id="builder" class="py-32 px-6 bg-white">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+    <section id="builder" class="py-16 md:py-32 px-4 md:px-6 bg-white">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
             <div>
                 <span class="text-[#6b8f7a] uppercase tracking-widest text-xs font-bold">The Architecture</span>
-                <h2 class="text-4xl md:text-5xl font-serif text-[#1f3d2b] mt-4 mb-6">Build the forms you already use.
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-[#1f3d2b] mt-4 mb-6">Build the forms you
+                    already use.
                 </h2>
-                <p class="text-lg text-[#3d5f4d] font-light leading-relaxed mb-8">
+                <p class="text-base md:text-lg text-[#3d5f4d] font-light leading-relaxed mb-8">
                     Salvia doesn't force a workflow. You create the fields, the IDs, and the validation logic. When you
                     record your summary, Salvia acts as the high-speed bridge between your voice and your existing data
                     structures.
@@ -578,11 +682,11 @@
                     <div class="p-4 bg-[#f7f9f6] rounded-2xl border border-gray-100 text-sm font-bold">Versioning</div>
                 </div>
             </div>
-            <div class="relative group">
+            <div class="relative group mt-8 md:mt-0">
                 <div
                     class="absolute -inset-4 bg-gradient-to-r from-[#5a8a6e]/10 to-[#1f3d2b]/10 rounded-[48px] blur-2xl group-hover:opacity-100 transition duration-1000">
                 </div>
-                <div class="relative bg-white p-10 rounded-[40px] shadow-xl border border-gray-100">
+                <div class="relative bg-white p-6 md:p-10 rounded-[40px] shadow-xl border border-gray-100">
                     <div class="flex items-center justify-between mb-10">
                         <div class="text-sm font-serif font-bold">Template: Post-Op Quick</div>
                         <span
@@ -592,21 +696,21 @@
                         <div
                             class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-dashed border-gray-200">
                             <div
-                                class="w-8 h-8 rounded bg-white border border-gray-200 flex items-center justify-center text-xs">
+                                class="w-8 h-8 rounded bg-white border border-gray-200 flex items-center justify-center text-xs shrink-0">
                                 Abc</div>
                             <div class="flex-1 text-sm font-medium">Chief Complaint Summary</div>
                         </div>
                         <div
                             class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-dashed border-gray-200">
                             <div
-                                class="w-8 h-8 rounded bg-white border border-gray-200 flex items-center justify-center text-xs">
+                                class="w-8 h-8 rounded bg-white border border-gray-200 flex items-center justify-center text-xs shrink-0">
                                 01</div>
                             <div class="flex-1 text-sm font-medium">Pain Score (1-10)</div>
                         </div>
                         <div
                             class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-dashed border-gray-200">
                             <div
-                                class="w-8 h-8 rounded bg-white border border-gray-200 flex items-center justify-center text-xs">
+                                class="w-8 h-8 rounded bg-white border border-gray-200 flex items-center justify-center text-xs shrink-0">
                                 ✓</div>
                             <div class="flex-1 text-sm font-medium">Red Flags Absent</div>
                         </div>
@@ -617,20 +721,21 @@
     </section>
 
     <!-- 6. ANALYTICS / INSIGHTS (From Salvia-Complete) -->
-    <section id="analytics" class="py-32 px-6 bg-[#f7f9f6]">
+    <section id="analytics" class="py-16 md:py-32 px-4 md:px-6 bg-[#f7f9f6]">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-8">
                 <div class="max-w-2xl">
-                    <h2 class="text-4xl md:text-5xl font-serif text-[#1f3d2b]">System-wide Insights.</h2>
-                    <p class="text-[#3d5f4d] mt-4">Identify trends across your entire organization. Monitor care
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-[#1f3d2b]">System-wide Insights.</h2>
+                    <p class="text-[#3d5f4d] mt-4 text-base md:text-lg">Identify trends across your entire organization.
+                        Monitor care
                         quality, staff workload, and documentation efficiency in real-time.</p>
                 </div>
                 <button
-                    class="px-8 py-4 rounded-full bg-[#1f3d2b] text-white font-bold text-xs uppercase tracking-widest">Explore
+                    class="px-8 py-4 rounded-full bg-[#1f3d2b] text-white font-bold text-xs uppercase tracking-widest w-full md:w-auto">Explore
                     Analytics</button>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8">
                 <div class="bg-white p-8 rounded-3xl shadow-sm">
                     <div class="text-[#6b8f7a] text-xs font-bold mb-4 uppercase">Productivity</div>
                     <div class="text-4xl font-serif mb-2">4.2 hrs</div>
@@ -651,24 +756,27 @@
     </section>
 
     <!-- 7. THE ONE REASON (Original Index Content) -->
-    <section id="problem" class="py-24 bg-white/50">
-        <div class="mx-auto max-w-7xl px-6">
+    <section id="problem" class="py-16 md:py-24 bg-white/50">
+        <div class="mx-auto max-w-7xl px-4 md:px-6">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 class="text-base font-semibold leading-7 text-[#2f5a43] uppercase tracking-widest">The Core
                         Problem</h2>
-                    <p class="mt-2 font-serif text-4xl font-bold text-slate-900 leading-tight">The #1 reason to use
+                    <p class="mt-2 font-serif text-3xl md:text-4xl font-bold text-slate-900 leading-tight">The #1 reason
+                        to use
                         Salvia:
                         <br><span class="text-[#2f5a43] italic">Clinical Burnout is Optional.</span>
                     </p>
-                    <p class="mt-6 text-lg text-slate-600">Healthcare professionals spend up to 40% of their day on
+                    <p class="mt-6 text-base md:text-lg text-slate-600">Healthcare professionals spend up to 40% of
+                        their day on
                         administrative data entry. This "documentation debt" leads to fatigue, errors, and less time for
                         patients. Salvia resolves this by making documentation a natural byproduct of your care, not a
                         separate chore.</p>
                 </div>
-                <div class="bg-white p-8 rounded-3xl shadow-xl border border-emerald-100">
+                <div class="bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-emerald-100">
                     <div class="flex items-start gap-4 mb-6">
-                        <div class="bg-red-100 p-3 rounded-full"><i data-lucide="x-circle" class="text-red-600"></i>
+                        <div class="bg-red-100 p-3 rounded-full shrink-0"><i data-lucide="x-circle"
+                                class="text-red-600"></i>
                         </div>
                         <div>
                             <h4 class="font-bold">Before Salvia</h4>
@@ -677,7 +785,7 @@
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
-                        <div class="bg-emerald-100 p-3 rounded-full"><i data-lucide="check-circle"
+                        <div class="bg-emerald-100 p-3 rounded-full shrink-0"><i data-lucide="check-circle"
                                 class="text-emerald-600"></i></div>
                         <div>
                             <h4 class="font-bold text-[#2f5a43]">After Salvia</h4>
@@ -691,31 +799,31 @@
     </section>
 
     <!-- 8. SECURITY (From Salvia-Complete) -->
-    <section id="security" class="py-32 px-6 bg-[#f7f9f6]">
+    <section id="security" class="py-16 md:py-32 px-4 md:px-6 bg-[#f7f9f6]">
         <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
             <div class="md:col-span-1">
                 <span class="text-[#6b8f7a] uppercase tracking-widest text-xs font-bold">Uncompromising</span>
-                <h2 class="text-4xl font-serif text-[#1f3d2b] mt-4 mb-6">Built for HIPAA & GDPR.</h2>
+                <h2 class="text-3xl md:text-4xl font-serif text-[#1f3d2b] mt-4 mb-6">Built for HIPAA & GDPR.</h2>
                 <p class="text-[#3d5f4d] leading-relaxed">Medical data is sacred. We treat security not as a feature,
                     but as the foundation of every line of code we write.</p>
             </div>
-            <div class="md:col-span-2 grid sm:grid-cols-2 gap-8">
-                <div class="p-8 border border-gray-100 rounded-2xl bg-white">
+            <div class="md:col-span-2 grid sm:grid-cols-2 gap-6 md:gap-8">
+                <div class="p-6 md:p-8 border border-gray-100 rounded-2xl bg-white">
                     <h4 class="font-bold text-[#1f3d2b] mb-2">End-to-End Encryption</h4>
                     <p class="text-sm text-[#3d5f4d]">Audio and transcripts are encrypted in transit and at rest using
                         AES-256 standards.</p>
                 </div>
-                <div class="p-8 border border-gray-100 rounded-2xl bg-white">
+                <div class="p-6 md:p-8 border border-gray-100 rounded-2xl bg-white">
                     <h4 class="font-bold text-[#1f3d2b] mb-2">Zero-Knowledge Storage</h4>
                     <p class="text-sm text-[#3d5f4d]">Your organization owns the keys. We cannot access raw patient data
                         without your explicit permission.</p>
                 </div>
-                <div class="p-8 border border-gray-100 rounded-2xl bg-white">
+                <div class="p-6 md:p-8 border border-gray-100 rounded-2xl bg-white">
                     <h4 class="font-bold text-[#1f3d2b] mb-2">Audit Trails</h4>
                     <p class="text-sm text-[#3d5f4d]">Every access, every edit, and every verification is logged in an
                         immutable ledger.</p>
                 </div>
-                <div class="p-8 border border-gray-100 rounded-2xl bg-white">
+                <div class="p-6 md:p-8 border border-gray-100 rounded-2xl bg-white">
                     <h4 class="font-bold text-[#1f3d2b] mb-2">PII Masking</h4>
                     <p class="text-sm text-[#3d5f4d]">Optional automatic redaction of personal identifiers for research
                         or training purposes.</p>
@@ -725,14 +833,14 @@
     </section>
 
     <!-- 9. TESTIMONIALS (Original Index Content) -->
-    <section class="py-24 bg-white">
-        <div class="mx-auto max-w-7xl px-6">
-            <div class="text-center mb-16">
-                <h2 class="font-serif text-4xl font-bold text-slate-900">What our customers are saying</h2>
+    <section class="py-16 md:py-24 bg-white">
+        <div class="mx-auto max-w-7xl px-4 md:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-slate-900">What our customers are saying</h2>
                 <p class="text-slate-500 mt-4">Clinical specialists love saving time with Salvia.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-[#f7f9f6] p-8 rounded-2xl shadow-sm border border-slate-100">
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+                <div class="bg-[#f7f9f6] p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100">
                     <div class="flex gap-1 mb-4">
                         <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
                         <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
@@ -750,7 +858,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-[#f7f9f6] p-8 rounded-2xl shadow-sm border border-slate-100">
+                <div class="bg-[#f7f9f6] p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100">
                     <div class="flex gap-1 mb-4">
                         <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
                         <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
@@ -768,7 +876,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-[#f7f9f6] p-8 rounded-2xl shadow-sm border border-slate-100">
+                <div class="bg-[#f7f9f6] p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100">
                     <div class="flex gap-1 mb-4">
                         <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
                         <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
@@ -791,10 +899,10 @@
     </section>
 
     <!-- 10. PRICING (REDESIGNED: High-End Medical Cards) -->
-    <section id="pricing" class="py-24 bg-[#f7f9f6]">
-        <div class="mx-auto max-w-7xl px-6">
-            <div class="text-center mb-16">
-                <h2 class="font-serif text-4xl font-bold text-slate-900">Simple, transparent pricing.</h2>
+    <section id="pricing" class="py-16 md:py-24 bg-[#f7f9f6]">
+        <div class="mx-auto max-w-7xl px-4 md:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-slate-900">Simple, transparent pricing.</h2>
                 <p class="text-slate-500 mt-4">Choose the plan that fits your practice scale.</p>
             </div>
             <!-- Grid for 4 tiers -->
@@ -1020,7 +1128,7 @@
     </section>
 
     <!-- 11. FOOTER (UPDATED: Premium Dark Theme with Glowing Attractor) -->
-    <footer class="relative bg-[#1f3d2b] text-white pt-24 pb-12 overflow-hidden">
+    <footer class="relative bg-[#1f3d2b] text-white pt-16 md:pt-24 pb-12 overflow-hidden">
         <!-- Optional: Subtle top border gradient -->
         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1f3d2b] via-[#2f5a43] to-[#1f3d2b]"></div>
 
@@ -1103,12 +1211,12 @@
             <!-- Bottom Row -->
             <div
                 class="flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest text-emerald-100/30 font-bold">
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2 text-center md:text-left">
                     <span>© 2025 OFF BY 2.</span>
                     <span class="w-1 h-1 rounded-full bg-emerald-500/50"></span>
                     <span>All rights reserved.</span>
                 </div>
-                <div class="flex gap-8">
+                <div class="flex gap-4 md:gap-8 flex-wrap justify-center">
                     <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
                     <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
                     <a href="#" class="hover:text-white transition-colors">HIPAA</a>
@@ -1118,7 +1226,7 @@
 
         <!-- Attractor Canvas: Positioned Absolute for Ambient Effect -->
         <div
-            class="absolute bottom-10 right-20 w-[500px] h-[500px] pointer-events-none opacity-60 translate-x-1/4 translate-y-1/4 mix-blend-screen">
+            class="absolute bottom-10 right-10 md:right-20 w-[300px] h-[300px] md:w-[500px] md:h-[500px] pointer-events-none opacity-40 md:opacity-60 translate-x-1/4 translate-y-1/4 mix-blend-screen">
             <canvas id="footer-flower" class="w-full h-full"></canvas>
         </div>
     </footer>
@@ -1127,6 +1235,38 @@
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
+
+        // Mobile Menu Logic
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-[-10px]');
+                mobileMenu.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                // Change icon to X
+                mobileBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            } else {
+                mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-[-10px]');
+                // Change icon back to Menu
+                mobileBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+                document.body.style.overflow = '';
+            }
+            lucide.createIcons();
+        }
+
+        mobileBtn.addEventListener('click', toggleMenu);
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) toggleMenu();
+            });
+        });
 
         // 1. Vortex Hero Animation
         document.addEventListener('DOMContentLoaded', () => {
