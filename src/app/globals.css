@@ -1,0 +1,230 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-dark: #1f3d2b;
+  --color-brand-mid: #3d5f4d;
+  --color-brand-light: #6b8f7a;
+  --color-brand-bg: #f7f9f6;
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
+}
+
+:root {
+  --color-dark: #1f3d2b;
+  --color-mid: #3d5f4d;
+  --color-light: #6b8f7a;
+  --color-bg: #f7f9f6;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-dark);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+.serif {
+  font-family: var(--font-playfair), serif;
+}
+
+/* 3D HERO STYLES */
+.glass-container {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 32px;
+  box-shadow: 0 20px 40px -10px rgba(31, 61, 43, 0.05);
+  overflow: hidden;
+  position: relative;
+}
+
+.salvia-blob {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #5a8a6e 0%, #1f3d2b 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 20px 50px rgba(31, 61, 43, 0.3),
+    inset 0 10px 20px rgba(255, 255, 255, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  animation: morphBlob 8s ease-in-out infinite;
+}
+
+@media (min-width: 768px) {
+  .salvia-blob {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@keyframes morphBlob {
+
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+.canvas-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #fbfcfb, #f0fdf4);
+}
+
+#vortex-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.viz-label {
+  position: absolute;
+  bottom: 1.5rem;
+  font-family: var(--font-inter), sans-serif;
+  pointer-events: none;
+  width: auto;
+}
+
+@media (min-width: 768px) {
+  .viz-label {
+    bottom: 2rem;
+  }
+}
+
+.viz-label .title {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #8b7355;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .viz-label .title {
+    font-size: 0.7rem;
+  }
+}
+
+.viz-label.right .title {
+  color: #2f5a43;
+  text-align: right;
+}
+
+.viz-label .desc {
+  font-size: 0.75rem;
+  color: #1f3d2b;
+  font-weight: 500;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .viz-label .desc {
+    font-size: 0.9rem;
+  }
+}
+
+.viz-label.right .desc {
+  text-align: right;
+}
+
+.btn-shadow {
+  box-shadow: 0 4px 14px 0 rgba(45, 90, 67, 0.39);
+}
+
+/* Mobile Menu Transitions */
+#mobile-menu {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.mobile-frame {
+  border: 8px solid #1f2937;
+  border-radius: 36px;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 320px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+.mobile-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 24px;
+  background: #1f2937;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  z-index: 20;
+}
+
+/* Blog Prose Styles */
+.prose p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: #3d5f4d;
+}
+
+.prose h2 {
+  font-family: var(--font-playfair), serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1f3d2b;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.prose h3 {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2f5a43;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #3d5f4d;
+  line-height: 1.8;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose blockquote {
+  border-left: 4px solid #6b8f7a;
+  padding-left: 1.5rem;
+  font-style: italic;
+  color: #2f5a43;
+  margin-bottom: 1.5rem;
+  background: #f7f9f6;
+  padding: 1.5rem;
+  border-radius: 0 1rem 1rem 0;
+}
