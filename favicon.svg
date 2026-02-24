@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Bright, vibrant lime-green background matching the reference aesthetic -->
+  <rect width="100" height="100" rx="26" fill="#d1f07b" />
+  
+  <g transform="translate(50,50)" fill="#1f3d2b" stroke="#1f3d2b" stroke-width="3" stroke-linejoin="round">
+    <!-- Clean, minimalist central ring/data node -->
+    <circle cx="0" cy="0" r="14" stroke="none" />
+    <circle cx="0" cy="0" r="5" fill="#d1f07b" stroke="none" />
+    
+    <!-- Dynamic geometric leaf/cross shapes (4 axes) -->
+    <path d="M 18,-6 L 36,-18 L 44,-2 L 18,8 Z" />
+    <path d="M 18,-6 L 36,-18 L 44,-2 L 18,8 Z" transform="rotate(90)" />
+    <path d="M 18,-6 L 36,-18 L 44,-2 L 18,8 Z" transform="rotate(180)" />
+    <path d="M 18,-6 L 36,-18 L 44,-2 L 18,8 Z" transform="rotate(270)" />
+  </g>
+</svg>
