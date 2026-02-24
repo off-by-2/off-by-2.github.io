@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Self-Hosting Health Data Matters | Salvia Blog</title>
+    <meta name="description"
+        content="Discover why the enterprise paywall is failing smaller clinics and how open-source self-hosting provides better security and lower costs.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://off-by-2.github.io/article2.html">
+    <meta property="og:title" content="Why Self-Hosting Health Data Matters More Than Ever">
+    <meta property="og:description"
+        content="Why taking ownership of your clinical data via open-source tools ensures better HIPAA parity and lower costs.">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind & Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .btn-shadow {
+            box-shadow: 0 4px 14px 0 rgba(107, 143, 122, 0.39);
+        }
+
+        .prose p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #3d5f4d;
+        }
+
+        .prose h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1f3d2b;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .prose h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2f5a43;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .prose ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #3d5f4d;
+            line-height: 1.8;
+        }
+
+        .prose li {
+            margin-bottom: 0.5rem;
+        }
+
+        .prose blockquote {
+            border-left: 4px solid #6b8f7a;
+            padding-left: 1.5rem;
+            font-style: italic;
+            color: #2f5a43;
+            margin-bottom: 1.5rem;
+            background: #f7f9f6;
+            padding: 1.5rem;
+            border-radius: 0 1rem 1rem 0;
+        }
+    </style>
+</head>
+
+<body class="antialiased text-[#1f3d2b]">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-[#6b8f7a]/10"
+        id="navbar">
+        <div class="px-6 md:px-8 mx-auto flex items-center justify-between h-20">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div
+                    class="w-10 h-10 rounded-xl bg-[#1f3d2b] flex items-center justify-center text-[#d1f07b] shadow-sm group-hover:scale-105 transition-transform">
+                    <i data-lucide="leaf" class="w-5 h-5"></i>
+                </div>
+                <span class="font-serif font-bold text-2xl tracking-tight text-[#1f3d2b]">Salvia.</span>
+            </a>
+
+            <div class="hidden md:flex gap-10 text-sm font-medium text-[#2f5a43]">
+                <a href="index.html#documentation" class="hover:text-[#1f3d2b] transition-colors">Documentation</a>
+                <a href="index.html#compliance" class="hover:text-[#1f3d2b] transition-colors">Compliance</a>
+                <a href="blog.html" class="text-[#1f3d2b] transition-colors">Blog</a>
+            </div>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://github.com/off-by-2/sal"
+                    class="text-sm font-bold text-[#1f3d2b] hover:text-[#6b8f7a] transition-colors flex items-center gap-2">
+                    <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                </a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-[#1f3d2b]"><i data-lucide="menu"
+                    class="w-6 h-6"></i></button>
+        </div>
+    </nav>
+
+    <!-- ARTICLE HEADER -->
+    <header class="pt-32 pb-16 md:pt-40 md:pb-24 bg-emerald-50 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-emerald-100 to-teal-50 opacity-50"></div>
+        <div class="max-w-3xl mx-auto px-4 md:px-6 relative z-10">
+            <div class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-[#6b8f7a] mb-6">
+                <a href="blog.html" class="hover:text-[#1f3d2b] transition-colors flex items-center gap-1"><i
+                        data-lucide="arrow-left" class="w-3 h-3"></i> Back to Blog</a>
+                <span>•</span>
+                <span class="bg-white/50 px-2 py-1 rounded">Open Source</span>
+            </div>
+
+            <h1
+                class="text-4xl sm:text-5xl md:text-6xl font-serif font-bold tracking-tight text-[#1f3d2b] leading-[1.1] mb-6">
+                Why Self-Hosting Health Data Matters More Than Ever
+            </h1>
+
+            <div class="flex items-center gap-4 mt-8 pt-8 border-t border-[#6b8f7a]/20">
+                <div
+                    class="w-12 h-12 rounded-full bg-[#1f3d2b] flex items-center justify-center text-white font-serif font-bold">
+                    AL</div>
+                <div>
+                    <p class="font-bold text-[#1f3d2b] text-sm">Alex Lin</p>
+                    <p class="text-sm text-[#6b8f7a]">Published Feb 10, 2026 • 8 min read</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ARTICLE BODY -->
+    <article class="py-16 md:py-24">
+        <div class="max-w-3xl mx-auto px-4 md:px-6 prose prose-lg">
+            <p class="text-xl font-light">The modern clinical software stack is broken. For decades, clinics have been
+                strong-armed into subscribing to massive, bloated Enterprise Health Record (EHR) systems that charge
+                exorbitant per-seat licenses while holding patient data hostage on third-party servers.</p>
+
+            <p>But the tide is shifting. With the rise of robust open-source alternatives, self-hosting is no longer a
+                risky endeavor—it is becoming the gold standard for data security and financial sustainability in
+                healthcare.</p>
+
+            <h2>The Hidden Costs of SaaS EHRs</h2>
+
+            <p>When you subscribe to a managed healthcare platform, you aren't just paying for the software. You are
+                constantly paying for:</p>
+
+            <ul>
+                <li><strong>Cloud Storage Markups:</strong> Third-party vendors often mark up raw server storage costs
+                    by 10x or more.</li>
+                <li><strong>Feature Gating:</strong> Basic compliance and audit logs are regularly locked behind
+                    "Enterprise" tiers.</li>
+                <li><strong>Data Gravity:</strong> Once your patient records are accumulated on their servers, migrating
+                    away becomes a costly, proprietary nightmare—effectively locking you in.</li>
+            </ul>
+
+            <blockquote>
+                "If you do not physically control the server where your patient data rests, your fundamental security
+                architecture relies solely on a vendor's promise."
+            </blockquote>
+
+            <h2>Why Open Source is the Cure</h2>
+
+            <p>Open-source platforms like Salvia invert this dynamic entirely. By providing the source code
+                transparently, clinics regain absolute control over how their data is handled, stored, and verified.</p>
+
+            <h3>1. True HIPAA & GDPR Compliance</h3>
+            <p>By deploying an open-source solution on a private, self-managed server (like an AWS or Azure
+                HIPAA-compliant enclave), your clinic maintains the only encryption keys. There avoids the need for
+                complex Business Associate Agreements (BAAs) with dozens of interconnected third-party SaaS vendors,
+                drastically reducing your attack surface.</p>
+
+            <h3>2. Complete Audit Transparency</h3>
+            <p>With closed-source software, you must trust the vendor's audit logs. With open-source tools, the
+                community transparently verifies the code generating those logs. Every access ping and permission change
+                is tracked natively on your hardware.</p>
+
+            <h2>Take Back Your Data</h2>
+            <p>Self-hosting is no longer reserved for massive hospital IT departments. Lightweight, containerized
+                platforms can now be deployed securely by a single DevOps engineer in an afternoon. The enterprise
+                paywall is crumbling, and the future of clinical tech is local, secure, and open.</p>
+
+            <hr class="my-12 border-slate-200">
+
+            <div class="bg-emerald-50 rounded-2xl p-8 text-center mt-12">
+                <h3 class="font-serif font-bold text-2xl text-[#1f3d2b] mb-4">Ready to regain control?</h3>
+                <p class="text-[#3d5f4d] mb-6">Salvia is completely free to self-host. Deploy our open-source platform
+                    today and stop paying enterprise fees for your own data.</p>
+                <a href="https://github.com/off-by-2/sal"
+                    class="inline-flex items-center gap-2 bg-[#1f3d2b] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#3d5f4d] transition-colors">
+                    Clone Salvia on GitHub <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#1f3d2b] text-white pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-6 text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <a href="index.html" class="flex items-center gap-3">
+                    <span class="font-serif font-bold text-2xl">Salvia.</span>
+                </a>
+                <div class="flex gap-8 text-sm font-medium text-emerald-100/60">
+                    <a href="index.html" class="hover:text-white transition-colors">Platform</a>
+                    <a href="https://github.com/off-by-2/sal" class="hover:text-white transition-colors">GitHub</a>
+                    <a href="blog.html" class="hover:text-white transition-colors">Blog</a>
+                </div>
+            </div>
+            <div
+                class="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold uppercase tracking-widest text-emerald-100/30">
+                <span>© 2026 OFF BY 2. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script> lucide.createIcons(); </script>
+</body>
+
+</html>
