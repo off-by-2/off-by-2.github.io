@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salvia | Audio to Structured Healthcare Forms</title>
-
+    <title>Salvia | Clinical Compliance, Documentation & Feedback</title>
+    <meta name="description"
+        content="Salvia is an open-source clinical platform offering Care Documentation, Compliance protocols (checklists & continuous verification), Patient Feedback, and automated dashboard timelines. Completely free to self-host.">
     <!-- Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
@@ -203,11 +204,11 @@
 
         <!-- Desktop Menu -->
         <div class="hidden md:flex gap-10 text-sm font-medium text-[#2f5a43]">
-            <a href="#workspace" class="hover:text-[#1f3d2b] transition-colors">Workspace</a>
-            <a href="#product-form" class="hover:text-[#1f3d2b] transition-colors">Mobile App</a>
-            <a href="#builder" class="hover:text-[#1f3d2b] transition-colors">Builder</a>
-            <a href="#analytics" class="hover:text-[#1f3d2b] transition-colors">Insights</a>
-            <a href="#security" class="hover:text-[#1f3d2b] transition-colors">Security</a>
+            <a href="#documentation" class="hover:text-[#1f3d2b] transition-colors">Documentation</a>
+            <a href="#compliance" class="hover:text-[#1f3d2b] transition-colors">Compliance</a>
+            <a href="#feedback" class="hover:text-[#1f3d2b] transition-colors">Feedback</a>
+            <a href="#management" class="hover:text-[#1f3d2b] transition-colors">Management</a>
+            <a href="#opensource" class="hover:text-[#1f3d2b] transition-colors">Open Source</a>
         </div>
 
         <div class="hidden md:block">
@@ -226,11 +227,11 @@
         <div id="mobile-menu"
             class="fixed inset-0 bg-[#f7f9f6] z-40 flex flex-col justify-center items-center opacity-0 pointer-events-none translate-y-[-10px]">
             <div class="flex flex-col items-center gap-8 text-lg font-serif font-medium text-[#1f3d2b]">
-                <a href="#workspace" class="mobile-link hover:text-[#5a8a6e] transition-colors">Workspace</a>
-                <a href="#product-form" class="mobile-link hover:text-[#5a8a6e] transition-colors">Mobile App</a>
-                <a href="#builder" class="mobile-link hover:text-[#5a8a6e] transition-colors">Builder</a>
-                <a href="#analytics" class="mobile-link hover:text-[#5a8a6e] transition-colors">Insights</a>
-                <a href="#security" class="mobile-link hover:text-[#5a8a6e] transition-colors">Security</a>
+                <a href="#documentation" class="mobile-link hover:text-[#5a8a6e] transition-colors">Documentation</a>
+                <a href="#compliance" class="mobile-link hover:text-[#5a8a6e] transition-colors">Compliance</a>
+                <a href="#feedback" class="mobile-link hover:text-[#5a8a6e] transition-colors">Feedback</a>
+                <a href="#management" class="mobile-link hover:text-[#5a8a6e] transition-colors">Management</a>
+                <a href="#opensource" class="mobile-link hover:text-[#5a8a6e] transition-colors">Open Source</a>
                 <button
                     class="mt-4 px-8 py-3 rounded-full bg-[#1f3d2b] text-white text-xs font-bold uppercase tracking-widest hover:bg-[#2f5a43] transition-all mobile-link">
                     Book Demo
@@ -249,8 +250,8 @@
             </h1>
             <p
                 class="mt-6 md:mt-8 text-base md:text-xl text-[#3d5f4d] max-w-2xl mx-auto leading-relaxed font-light px-2">
-                The intelligent layer between patient care and clinical records. Transforming bedside audio into
-                high-fidelity structured data for your entire organization.
+                Salvia unites Care Documentation, Compliance protocols, and Patient Feedback under one open-source roof.
+                Eliminating human mistakes so you can focus on patient outcomes.
             </p>
         </div>
 
@@ -277,16 +278,15 @@
     </section>
 
     <!-- 3. THE WORKSPACE / MANAGEMENT HUB -->
-    <section id="workspace" class="py-16 md:py-20 bg-slate-50/50">
+    <section id="management" class="py-16 md:py-20 bg-slate-50/50">
         <div class="max-w-7xl mx-auto px-4 md:px-6">
             <div class="mb-10 md:mb-12 text-center max-w-3xl mx-auto">
-                <p class="text-[10px] font-bold text-[#6b8f7a] uppercase tracking-widest mb-3">Enterprise
-                    Infrastructure</p>
-                <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#1f3d2b] mb-4">The Management
+                <p class="text-[10px] font-bold text-[#6b8f7a] uppercase tracking-widest mb-3">Complete Oversight</p>
+                <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#1f3d2b] mb-4">Easy Management
                     Hub</h2>
                 <p class="text-[#3d5f4d] text-base md:text-lg font-light leading-relaxed">
-                    A high-performance explorer designed for administrators and clinical leads to manage organizational
-                    hierarchies, staff rosters, and resident directories.
+                    A high-performance explorer designed for clinics to manage organizational hierarchies, staff
+                    rosters, resident directories, and unified compliance dashboards all in one place.
                 </p>
             </div>
 
@@ -450,20 +450,21 @@
         </div>
     </section>
 
-    <!-- 4. BEDSIDE ROUNDS MOBILE APP -->
-    <section id="product-form" class="py-16 md:py-24 bg-white overflow-hidden">
+    <!-- 4. CARE DOCUMENTATION -->
+    <section id="documentation" class="py-16 md:py-24 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
 
             <!-- Content Side -->
             <div class="space-y-6 md:space-y-8 max-w-xl order-2 md:order-1">
                 <div>
-                    <p class="text-[10px] font-bold text-[#6b8f7a] uppercase tracking-widest mb-3">Clinician Field Tool
-                    </p>
+                    <p class="text-[10px] font-bold text-[#6b8f7a] uppercase tracking-widest mb-3">Single Source of
+                        Truth</p>
                     <h3 class="serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#1f3d2b] leading-tight">
-                        BedsideAssessment Engine</h3>
+                        Care Documentation</h3>
                     <p class="text-[#3d5f4d] text-base md:text-lg mt-4 font-light leading-relaxed">
-                        The "on-the-floor" companion for daily rounds. Replace fragmented notes with high-fidelity,
-                        structured medical forms generated in real-time from your voice.
+                        Stop trying to figure out scattered nurses' notes. Salvia provides a unified timeline where all
+                        documentation is structured, accurate, and instantly accessible to your entire clinic in one
+                        place.
                     </p>
                 </div>
 
@@ -474,34 +475,31 @@
                             <i data-lucide="file-text" class="w-5 h-5 text-[#1f3d2b]"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-[#1f3d2b] text-sm">Rich Daily Metrics</h4>
-                            <p class="text-[13px] text-[#3d5f4d] mt-1 leading-normal font-light">Captures nutrition (PO
-                                intake),
-                                Blood Sugar, ADLs, and mood in a single verbal workflow.</p>
+                            <h4 class="font-bold text-[#1f3d2b] text-sm">Timelined Legal Records</h4>
+                            <p class="text-[13px] text-[#3d5f4d] mt-1 leading-normal font-light">Instantly extract
+                                complete, chronological patient interactions for legal and compliance matters.</p>
                         </div>
                     </div>
                     <div class="flex gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
                         <div
                             class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center shrink-0">
-                            <i data-lucide="eye-off" class="w-5 h-5 text-[#6b8f7a]"></i>
+                            <i data-lucide="layers" class="w-5 h-5 text-[#6b8f7a]"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-[#1f3d2b] text-sm">Clutter-Free Interface</h4>
-                            <p class="text-[13px] text-[#3d5f4d] mt-1 leading-normal font-light">Transcripts are hidden
-                                by default
-                                to keep the clinician focused on the structured clinical fields.</p>
+                            <h4 class="font-bold text-[#1f3d2b] text-sm">Structured Integrity</h4>
+                            <p class="text-[13px] text-[#3d5f4d] mt-1 leading-normal font-light">Ensures all inputs
+                                follow your clinic's specific formatting rules. No more missing context.</p>
                         </div>
                     </div>
                     <div class="flex gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
                         <div
                             class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center shrink-0">
-                            <i data-lucide="zap" class="w-5 h-5 text-amber-500"></i>
+                            <i data-lucide="search" class="w-5 h-5 text-amber-500"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-[#1f3d2b] text-sm">Smart Clinical Flags</h4>
-                            <p class="text-[13px] text-[#3d5f4d] mt-1 leading-normal font-light">Automatically
-                                identifies anomalies
-                                like hyperglycemic trends or respiratory labor.</p>
+                            <h4 class="font-bold text-[#1f3d2b] text-sm">Instant Retrieval</h4>
+                            <p class="text-[13px] text-[#3d5f4d] mt-1 leading-normal font-light">Search across all
+                                shifts and specialties in milliseconds to find exactly what happened, when.</p>
                         </div>
                     </div>
                 </div>
@@ -639,31 +637,29 @@
         </div>
     </section>
 
-    <!-- 5. FORM BUILDER (REFERENCE SECTION) -->
-    <section id="builder" class="py-16 md:py-32 px-4 md:px-6 bg-white">
+    <!-- 5. COMPLIANCE -->
+    <section id="compliance" class="py-16 md:py-32 px-4 md:px-6 bg-[#f7f9f6]">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
             <div>
-                <span class="text-[#6b8f7a] uppercase tracking-widest text-xs font-bold">The Architecture</span>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-[#1f3d2b] mt-4 mb-6">Build the forms you
-                    already use.
+                <span class="text-[#6b8f7a] uppercase tracking-widest text-xs font-bold">Prevent Mistakes</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-[#1f3d2b] mt-4 mb-6">Error-Proof Compliance.
                 </h2>
                 <p class="text-base md:text-lg text-[#3d5f4d] font-light leading-relaxed mb-8">
-                    Salvia doesn't force a workflow. You create the fields, the IDs, and the validation logic. When you
-                    record your summary, Salvia acts as the high-speed bridge between your voice and your existing data
-                    structures.
+                    Prevent critical errors, like leaving instruments behind post-OP, with strict verification
+                    workflows. Clinicians must follow ordered checklists and upload images of instrument trays before
+                    and after surgery.
                 </p>
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="p-4 bg-[#f7f9f6] rounded-2xl border border-gray-100 text-sm font-bold text-[#1f3d2b]">
-                        Multiple Input
-                        Types</div>
-                    <div class="p-4 bg-[#f7f9f6] rounded-2xl border border-gray-100 text-sm font-bold text-[#1f3d2b]">
-                        Logic Validation
+                    <div class="p-4 bg-white rounded-2xl border border-gray-100 text-sm font-bold text-[#1f3d2b]">
+                        Image Verification</div>
+                    <div class="p-4 bg-white rounded-2xl border border-gray-100 text-sm font-bold text-[#1f3d2b]">
+                        Mandatory Checklists
                     </div>
-                    <div class="p-4 bg-[#f7f9f6] rounded-2xl border border-gray-100 text-sm font-bold text-[#1f3d2b]">
-                        API Integration
+                    <div class="p-4 bg-white rounded-2xl border border-gray-100 text-sm font-bold text-[#1f3d2b]">
+                        Dedicated Overseers
                     </div>
-                    <div class="p-4 bg-[#f7f9f6] rounded-2xl border border-gray-100 text-sm font-bold text-[#1f3d2b]">
-                        Versioning</div>
+                    <div class="p-4 bg-white rounded-2xl border border-gray-100 text-sm font-bold text-[#1f3d2b]">
+                        Audit Trails</div>
                 </div>
             </div>
             <div class="relative group mt-8 md:mt-0">
@@ -672,31 +668,31 @@
                 </div>
                 <div class="relative bg-white p-6 md:p-10 rounded-[40px] shadow-xl border border-gray-100">
                     <div class="flex items-center justify-between mb-10">
-                        <div class="text-sm font-serif font-bold text-[#1f3d2b]">Template: Post-Op Quick</div>
+                        <div class="text-sm font-serif font-bold text-[#1f3d2b]">OP Instrument Verification</div>
                         <span
-                            class="px-3 py-1 bg-green-50 text-green-700 text-[10px] font-bold rounded-full">ACTIVE</span>
+                            class="px-3 py-1 bg-amber-50 text-amber-700 text-[10px] font-bold rounded-full">PENDING</span>
                     </div>
                     <div class="space-y-4">
-                        <div
-                            class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-dashed border-gray-200">
+                        <div class="flex items-center gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200">
                             <div
-                                class="w-8 h-8 rounded bg-white border border-gray-200 flex items-center justify-center text-xs shrink-0">
-                                Abc</div>
-                            <div class="flex-1 text-sm font-medium text-[#1f3d2b]">Chief Complaint Summary</div>
-                        </div>
-                        <div
-                            class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-dashed border-gray-200">
-                            <div
-                                class="w-8 h-8 rounded bg-white border border-gray-200 flex items-center justify-center text-xs shrink-0">
-                                01</div>
-                            <div class="flex-1 text-sm font-medium text-[#1f3d2b]">Pain Score (1-10)</div>
-                        </div>
-                        <div
-                            class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-dashed border-gray-200">
-                            <div
-                                class="w-8 h-8 rounded bg-white border border-gray-200 flex items-center justify-center text-xs shrink-0">
+                                class="w-8 h-8 rounded bg-emerald-500 flex items-center justify-center text-xs shrink-0 text-white">
                                 ✓</div>
-                            <div class="flex-1 text-sm font-medium text-[#1f3d2b]">Red Flags Absent</div>
+                            <div class="flex-1 text-sm font-medium text-emerald-900">Pre-OP Tray Image Uploaded</div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200">
+                            <div
+                                class="w-8 h-8 rounded bg-emerald-500 flex items-center justify-center text-xs shrink-0 text-white">
+                                ✓</div>
+                            <div class="flex-1 text-sm font-medium text-emerald-900">Instruments Logged (Total: 42)
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center gap-4 p-4 bg-amber-50 rounded-xl border border-dashed border-amber-300">
+                            <div
+                                class="w-8 h-8 rounded bg-white border border-amber-300 flex items-center justify-center text-xs text-amber-500 shrink-0">
+                                03</div>
+                            <div class="flex-1 text-sm font-medium text-amber-900">Awaiting Post-OP Tray Image Verify
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -704,37 +700,46 @@
         </div>
     </section>
 
-    <!-- 6. ANALYTICS / INSIGHTS -->
-    <section id="analytics" class="py-16 md:py-32 px-4 md:px-6 bg-[#f7f9f6]">
+    <!-- 6. PATIENT FEEDBACK -->
+    <section id="feedback" class="py-16 md:py-32 px-4 md:px-6 bg-white">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-8">
                 <div class="max-w-2xl">
-                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-[#1f3d2b]">System-wide Insights.</h2>
-                    <p class="text-[#3d5f4d] mt-4 text-base md:text-lg font-light leading-relaxed">Identify trends
-                        across your entire organization.
-                        Monitor care
-                        quality, staff workload, and documentation efficiency in real-time.</p>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-[#1f3d2b]">Continuous Patient Feedback.
+                    </h2>
+                    <p class="text-[#3d5f4d] mt-4 text-base md:text-lg font-light leading-relaxed">Directly share
+                        customized feedback forms with specific patients post-visit or post-operation to catch issues
+                        early and continuously improve care quality.</p>
                 </div>
                 <button
-                    class="px-8 py-4 rounded-full bg-[#1f3d2b] text-white font-bold text-xs uppercase tracking-widest w-full md:w-auto hover:bg-[#2f5a43] transition-colors">Explore
-                    Analytics</button>
+                    class="px-8 py-4 rounded-full bg-[#1f3d2b] text-white font-bold text-xs uppercase tracking-widest w-full md:w-auto hover:bg-[#2f5a43] transition-colors">Setup
+                    Forms</button>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6 md:gap-8">
-                <div class="bg-white p-8 rounded-3xl shadow-sm">
-                    <div class="text-[#6b8f7a] text-xs font-bold mb-4 uppercase tracking-widest">Productivity</div>
-                    <div class="text-4xl font-serif mb-2 text-[#1f3d2b]">4.2 hrs</div>
-                    <p class="text-sm text-[#3d5f4d] font-light">Saved per clinician/week on average.</p>
+                <div class="bg-[#f7f9f6] p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="text-[#6b8f7a] text-xs font-bold mb-4 uppercase tracking-widest">Share Easily</div>
+                    <div
+                        class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="send"></i>
+                    </div>
+                    <p class="text-sm text-[#3d5f4d] font-light">Send secure, unique feedback links directly via SMS or
+                        email after discharge.</p>
                 </div>
-                <div class="bg-white p-8 rounded-3xl shadow-sm">
-                    <div class="text-[#6b8f7a] text-xs font-bold mb-4 uppercase tracking-widest">Accuracy</div>
-                    <div class="text-4xl font-serif mb-2 text-[#1f3d2b]">99.1%</div>
-                    <p class="text-sm text-[#3d5f4d] font-light">Matching accuracy for structured vitals.</p>
+                <div class="bg-[#f7f9f6] p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="text-[#6b8f7a] text-xs font-bold mb-4 uppercase tracking-widest">Targeted Surveys</div>
+                    <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-xl flex items-center justify-center mb-6"><i
+                            data-lucide="target"></i></div>
+                    <p class="text-sm text-[#3d5f4d] font-light">Customize questionnaires automatically based on the
+                        specific procedure performed.</p>
                 </div>
-                <div class="bg-white p-8 rounded-3xl shadow-sm">
-                    <div class="text-[#6b8f7a] text-xs font-bold mb-4 uppercase tracking-widest">Verification Rate</div>
-                    <div class="text-4xl font-serif mb-2 text-[#1f3d2b]">12m</div>
-                    <p class="text-sm text-[#3d5f4d] font-light">Average time from audio to verified record.</p>
+                <div class="bg-[#f7f9f6] p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="text-[#6b8f7a] text-xs font-bold mb-4 uppercase tracking-widest">Anomaly Alerts</div>
+                    <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="bell"></i>
+                    </div>
+                    <p class="text-sm text-[#3d5f4d] font-light">Immediately notify clinic management if patient
+                        discomfort scores trigger clinical flags.</p>
                 </div>
             </div>
         </div>
@@ -825,305 +830,117 @@
         </div>
     </section>
 
-    <!-- 9. TESTIMONIALS -->
-    <section class="py-16 md:py-24 bg-white">
+
+    <!-- 9. RESOURCES & BLOG -->
+    <section id="blog" class="py-16 md:py-24 bg-white border-t border-slate-100">
         <div class="mx-auto max-w-7xl px-4 md:px-6">
-            <div class="text-center mb-12 md:mb-16">
-                <h2 class="font-serif text-3xl md:text-4xl font-bold text-[#1f3d2b]">What our customers are saying</h2>
-                <p class="text-[#3d5f4d] font-light mt-4">Clinical specialists love saving time with Salvia.</p>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+                <div>
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-[#1f3d2b]">Latest Insights</h2>
+                    <p class="text-[#3d5f4d] font-light mt-4">Articles on compliance, open-source health tech, and
+                        better workflows.</p>
+                </div>
+                <a href="#"
+                    class="text-[#6b8f7a] font-bold text-sm hover:text-[#1f3d2b] transition-colors flex items-center gap-1">View
+                    all articles <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
             </div>
             <div class="grid md:grid-cols-3 gap-6 md:gap-8">
-                <div class="bg-[#f7f9f6] p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100">
-                    <div class="flex gap-1 mb-4">
-                        <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
-                    </div>
-                    <p class="text-[#3d5f4d] font-light italic mb-6">"Salvia has completely changed my clinic flow. I no
-                        longer
-                        spend 2 hours every evening finishing my notes. It's accurate, fast, and secure."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-slate-200"></div>
-                        <div>
-                            <p class="text-sm font-bold text-[#1f3d2b]">Dr. Sarah Chen</p>
-                            <p class="text-xs text-[#6b8f7a]">Family Physician</p>
+                <!-- Blog Post 1 -->
+                <a href="#" class="group block">
+                    <div class="w-full h-48 bg-emerald-50 rounded-2xl mb-4 overflow-hidden relative">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-emerald-100 to-teal-50 opacity-50 group-hover:scale-105 transition-transform duration-500">
                         </div>
+                        <div class="absolute inset-0 flex items-center justify-center text-emerald-300"><i
+                                data-lucide="shield-check" class="w-12 h-12"></i></div>
                     </div>
-                </div>
-                <div class="bg-[#f7f9f6] p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100">
-                    <div class="flex gap-1 mb-4">
-                        <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
+                    <div
+                        class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#6b8f7a] mb-2">
+                        <span>Compliance</span> • <span>5 Min Read</span>
                     </div>
-                    <p class="text-[#3d5f4d] font-light italic mb-6">"The structured forms are a game-changer. It
-                        doesn't just
-                        transcribe; it understands the clinical context. My audit compliance has never been better."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-slate-200"></div>
-                        <div>
-                            <p class="text-sm font-bold text-[#1f3d2b]">Marcus Thorne</p>
-                            <p class="text-xs text-[#6b8f7a]">Lead Physiotherapist</p>
+                    <h4
+                        class="font-serif font-bold text-xl text-[#1f3d2b] group-hover:text-[#6b8f7a] transition-colors line-clamp-2">
+                        How Checklist Protocols Reduce OP Never-Events</h4>
+                </a>
+
+                <!-- Blog Post 2 -->
+                <a href="#" class="group block">
+                    <div class="w-full h-48 bg-blue-50 rounded-2xl mb-4 overflow-hidden relative">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-blue-100 to-indigo-50 opacity-50 group-hover:scale-105 transition-transform duration-500">
                         </div>
+                        <div class="absolute inset-0 flex items-center justify-center text-blue-300"><i
+                                data-lucide="code-2" class="w-12 h-12"></i></div>
                     </div>
-                </div>
-                <div class="bg-[#f7f9f6] p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100">
-                    <div class="flex gap-1 mb-4">
-                        <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-emerald-500 text-emerald-500"></i>
+                    <div
+                        class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#6b8f7a] mb-2">
+                        <span>Open Source</span> • <span>8 Min Read</span>
                     </div>
-                    <p class="text-[#3d5f4d] font-light italic mb-6">"The privacy features are what sold us. Knowing we
-                        can
-                        self-host and that our data isn't used for training makes all the difference for our trust."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-slate-200"></div>
-                        <div>
-                            <p class="text-sm font-bold text-[#1f3d2b]">Elena Rodriguez</p>
-                            <p class="text-xs text-[#6b8f7a]">Clinic Director</p>
+                    <h4
+                        class="font-serif font-bold text-xl text-[#1f3d2b] group-hover:text-[#6b8f7a] transition-colors line-clamp-2">
+                        Why Self-Hosting Health Data Matters More Than Ever</h4>
+                </a>
+
+                <!-- Blog Post 3 -->
+                <a href="#" class="group block">
+                    <div class="w-full h-48 bg-amber-50 rounded-2xl mb-4 overflow-hidden relative">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-amber-100 to-orange-50 opacity-50 group-hover:scale-105 transition-transform duration-500">
                         </div>
+                        <div class="absolute inset-0 flex items-center justify-center text-amber-300"><i
+                                data-lucide="stethoscope" class="w-12 h-12"></i></div>
                     </div>
-                </div>
+                    <div
+                        class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#6b8f7a] mb-2">
+                        <span>Clinic Workflows</span> • <span>4 Min Read</span>
+                    </div>
+                    <h4
+                        class="font-serif font-bold text-xl text-[#1f3d2b] group-hover:text-[#6b8f7a] transition-colors line-clamp-2">
+                        Transforming Fragmented Notes into Centralized Truth</h4>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- 10. PRICING -->
-    <section id="pricing" class="py-16 md:py-24 bg-[#f7f9f6]">
-        <div class="mx-auto max-w-7xl px-4 md:px-6">
-            <div class="text-center mb-12 md:mb-16">
-                <h2 class="font-serif text-3xl md:text-4xl font-bold text-[#1f3d2b]">Simple, transparent pricing.</h2>
-                <p class="text-[#3d5f4d] font-light mt-4">Choose the plan that fits your practice scale.</p>
-            </div>
-            <!-- Grid for 4 tiers -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+    <!-- 10. OPEN SOURCE CTA -->
+    <section id="opensource" class="py-20 md:py-32 bg-[#1f3d2b] relative overflow-hidden">
+        <!-- Background Elements -->
+        <div
+            class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-[#6b8f7a]/10 rounded-full blur-3xl pointer-events-none">
+        </div>
 
-                <!-- 1. STARTER (Hook) -->
-                <div
-                    class="relative p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col">
-                    <div
-                        class="absolute top-0 left-0 w-full h-1.5 bg-slate-200 rounded-t-3xl group-hover:bg-[#1f3d2b] transition-colors duration-300">
-                    </div>
+        <div class="mx-auto max-w-4xl px-4 md:px-6 relative z-10 text-center">
+            <span
+                class="text-[#6b8f7a] uppercase tracking-widest text-xs font-bold bg-[#6b8f7a]/10 px-3 py-1 rounded-full border border-[#6b8f7a]/20">100%
+                Free & Open Source</span>
 
-                    <h4
-                        class="font-serif font-bold text-xl mb-2 text-[#1f3d2b] group-hover:text-[#1f3d2b] transition-colors">
-                        Starter</h4>
-                    <p class="text-[#3d5f4d] font-light text-xs mb-8 h-8 leading-normal">Essential documentation tools
-                        for solo
-                        practitioners.</p>
+            <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-8 mb-6">Your data. Your
+                servers. Your control.</h2>
 
-                    <div class="mb-8">
-                        <div class="flex items-baseline">
-                            <span class="text-4xl font-serif font-bold text-[#1f3d2b]">$29</span>
-                            <span class="text-[#6b8f7a] text-xs ml-1">/mo</span>
-                        </div>
-                        <div class="text-[10px] text-[#6b8f7a] mt-1 font-medium tracking-wide">billed annually ($299)
-                        </div>
-                    </div>
+            <p class="text-emerald-50/70 text-lg md:text-xl font-light mb-12 max-w-2xl mx-auto leading-relaxed">
+                Salvia is completely free to self-host. We believe essential clinical tools for documentation, feedback,
+                and compliance shouldn't be locked behind enterprise paywalls.
+            </p>
 
-                    <ul class="space-y-4 text-xs text-[#3d5f4d] font-light mb-8 flex-1">
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-3 h-3 text-[#1f3d2b]"></i>
-                            </div>
-                            <span class="leading-tight"><strong>150 Notes</strong> / month</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-3 h-3 text-[#1f3d2b]"></i>
-                            </div>
-                            <span class="leading-tight">Standard Templates</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-3 h-3 text-[#1f3d2b]"></i>
-                            </div>
-                            <span class="leading-tight">Secure Cloud Vault</span>
-                        </li>
-                    </ul>
-                    <button
-                        class="w-full py-4 rounded-xl border border-slate-200 bg-slate-50 font-bold text-[#1f3d2b] text-xs tracking-wider uppercase hover:bg-[#1f3d2b] hover:text-white hover:border-[#1f3d2b] transition-all">Get
-                        Started</button>
-                </div>
-
-                <!-- 2. PROFESSIONAL (Standard) - MOST POPULAR -->
-                <div
-                    class="relative p-8 bg-[#1f3d2b] text-white rounded-3xl shadow-2xl flex flex-col transform lg:-translate-y-4 ring-1 ring-white/10 overflow-hidden group">
-                    <!-- Subtle Glow Effect Background -->
-                    <div
-                        class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none">
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-[#6b8f7a]/20 rounded-full blur-3xl pointer-events-none">
-                    </div>
-
-                    <div
-                        class="absolute top-0 right-8 bg-[#6b8f7a] text-white px-3 py-1.5 rounded-b-lg text-[10px] font-bold tracking-widest uppercase shadow-lg">
-                        Most Popular</div>
-
-                    <h4 class="font-serif font-bold text-xl mb-2 relative z-10">Professional</h4>
-                    <p class="text-emerald-100/70 text-xs mb-8 h-8 leading-normal relative z-10 font-light">For busy
-                        specialists
-                        needing scale and custom forms.</p>
-
-                    <div class="mb-8 relative z-10">
-                        <div class="flex items-baseline">
-                            <span class="text-5xl font-serif font-bold text-white">$79</span>
-                            <span class="text-emerald-100/60 text-xs ml-1">/mo</span>
-                        </div>
-                        <div class="text-[10px] text-emerald-100/40 mt-1 font-medium tracking-wide">billed annually
-                            ($799)</div>
-                    </div>
-
-                    <ul class="space-y-4 text-xs text-emerald-50 mb-8 flex-1 relative z-10 font-light">
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-3 h-3 text-emerald-400"></i>
-                            </div>
-                            <span class="leading-tight"><strong>Unlimited</strong> Notes</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-3 h-3 text-emerald-400"></i>
-                            </div>
-                            <span class="leading-tight">Custom Form Builder</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-3 h-3 text-emerald-400"></i>
-                            </div>
-                            <span class="leading-tight">Priority 24/7 Support</span>
-                        </li>
-                    </ul>
-                    <button
-                        class="w-full py-4 rounded-xl bg-[#6b8f7a] font-bold text-white text-xs tracking-wider uppercase hover:bg-[#5a8a6e] transition-all shadow-lg hover:shadow-emerald-500/25 relative z-10">Start
-                        Free Trial</button>
-                </div>
-
-                <!-- 3. CLINIC (Pro) -->
-                <div
-                    class="relative p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col">
-                    <div
-                        class="absolute top-0 left-0 w-full h-1.5 bg-slate-200 rounded-t-3xl group-hover:bg-[#1f3d2b] transition-colors duration-300">
-                    </div>
-
-                    <h4
-                        class="font-serif font-bold text-xl mb-2 text-[#1f3d2b] group-hover:text-[#1f3d2b] transition-colors">
-                        Clinic</h4>
-                    <p class="text-[#3d5f4d] font-light text-xs mb-8 h-8 leading-normal">Advanced analytics and roster
-                        tools for
-                        small teams.</p>
-
-                    <div class="mb-8">
-                        <div class="flex items-baseline">
-                            <span class="text-4xl font-serif font-bold text-[#1f3d2b]">$149</span>
-                            <span class="text-[#6b8f7a] text-xs ml-1">/mo</span>
-                        </div>
-                        <div class="text-[10px] text-[#6b8f7a] mt-1 font-medium tracking-wide">billed annually ($1,499)
-                        </div>
-                    </div>
-
-                    <ul class="space-y-4 text-xs text-[#3d5f4d] font-light mb-8 flex-1">
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-3 h-3 text-[#1f3d2b]"></i>
-                            </div>
-                            <span class="leading-tight"><strong>Unlimited</strong> Notes</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-3 h-3 text-[#1f3d2b]"></i>
-                            </div>
-                            <span class="leading-tight">Team Analytics Dashboard</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-3 h-3 text-[#1f3d2b]"></i>
-                            </div>
-                            <span class="leading-tight">Direct EHR Integrations</span>
-                        </li>
-                    </ul>
-                    <button
-                        class="w-full py-4 rounded-xl border border-slate-200 bg-slate-50 font-bold text-[#1f3d2b] text-xs tracking-wider uppercase hover:bg-[#1f3d2b] hover:text-white hover:border-[#1f3d2b] transition-all">Contact
-                        Sales</button>
-                </div>
-
-                <!-- 4. ENTERPRISE (Elite) -->
-                <div
-                    class="relative p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col">
-                    <div
-                        class="absolute top-0 left-0 w-full h-1.5 bg-slate-200 rounded-t-3xl group-hover:bg-[#1f3d2b] transition-colors duration-300">
-                    </div>
-
-                    <h4
-                        class="font-serif font-bold text-xl mb-2 text-[#1f3d2b] group-hover:text-[#1f3d2b] transition-colors">
-                        Enterprise</h4>
-                    <p class="text-[#3d5f4d] font-light text-xs mb-8 h-8 leading-normal">Full control, security, and
-                        self-hosting
-                        for large orgs.</p>
-
-                    <div class="mb-8">
-                        <div class="flex items-baseline">
-                            <span class="text-4xl font-serif font-bold text-[#1f3d2b]">$299</span>
-                            <span class="text-[#6b8f7a] text-xs ml-1">/mo</span>
-                        </div>
-                        <div class="text-[10px] text-[#6b8f7a] mt-1 font-medium tracking-wide">billed annually ($2,999)
-                        </div>
-                    </div>
-
-                    <ul class="space-y-4 text-xs text-[#3d5f4d] font-light mb-8 flex-1">
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-3 h-3 text-[#1f3d2b]"></i>
-                            </div>
-                            <span class="leading-tight"><strong>Unlimited</strong> Notes</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-3 h-3 text-[#1f3d2b]"></i>
-                            </div>
-                            <span class="leading-tight">SSO / SAML Enforcement</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-3 h-3 text-[#1f3d2b]"></i>
-                            </div>
-                            <span class="leading-tight">Self-Hosting Option</span>
-                        </li>
-                    </ul>
-                    <button
-                        class="w-full py-4 rounded-xl border border-slate-200 bg-slate-50 font-bold text-[#1f3d2b] text-xs tracking-wider uppercase hover:bg-[#1f3d2b] hover:text-white hover:border-[#1f3d2b] transition-all">Book
-                        Demo</button>
-                </div>
-
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://github.com/off-by-2/sal" target="_blank"
+                    class="px-8 py-5 rounded-2xl bg-white text-[#1f3d2b] font-bold text-sm tracking-wide hover:bg-slate-50 transition-all flex items-center justify-center gap-3 btn-shadow">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                    View on GitHub
+                </a>
+                <a href="https://github.com/off-by-2" target="_blank"
+                    class="px-8 py-5 rounded-2xl bg-[#2f5a43] border border-[#6b8f7a]/30 text-white font-bold text-sm tracking-wide hover:bg-[#3d5f4d] transition-all flex items-center justify-center gap-3">
+                    <i data-lucide="users" class="w-5 h-5"></i>
+                    Join the Community
+                </a>
             </div>
 
-            <div class="mt-16 text-center">
-                <p class="text-[#3d5f4d] font-light font-medium">Join 15,000+ others who spend less time on
-                    documentation.</p>
-                <div class="flex justify-center gap-2 mt-4 grayscale opacity-50">
-                    <i data-lucide="award" class="w-6 h-6"></i>
-                    <i data-lucide="award" class="w-6 h-6"></i>
-                    <i data-lucide="award" class="w-6 h-6"></i>
-                </div>
+            <div class="mt-12 text-emerald-100/40 text-sm font-medium flex items-center justify-center gap-2">
+                <i data-lucide="shield-check" class="w-4 h-4"></i> Fully compliant with HIPAA & GDPR when self-hosted
+                properly.
             </div>
         </div>
     </section>
@@ -1171,16 +988,19 @@
                     <div>
                         <h5 class="font-bold text-xs uppercase tracking-[0.2em] text-[#6b8f7a] mb-6">Platform</h5>
                         <ul class="space-y-4 text-sm text-emerald-100/60 font-medium">
-                            <li><a href="#workflow"
-                                    class="hover:text-white transition-colors flex items-center gap-2">Workflow</a></li>
-                            <li><a href="#features"
-                                    class="hover:text-white transition-colors flex items-center gap-2">Scribe AI</a>
+                            <li><a href="#documentation"
+                                    class="hover:text-white transition-colors flex items-center gap-2">Documentation</a>
                             </li>
-                            <li><a href="#analytics"
-                                    class="hover:text-white transition-colors flex items-center gap-2">Analytics</a>
+                            <li><a href="#compliance"
+                                    class="hover:text-white transition-colors flex items-center gap-2">Compliance
+                                    Hub</a>
                             </li>
-                            <li><a href="#integrations"
-                                    class="hover:text-white transition-colors flex items-center gap-2">EHR Sync</a></li>
+                            <li><a href="#feedback"
+                                    class="hover:text-white transition-colors flex items-center gap-2">Feedback</a>
+                            </li>
+                            <li><a href="#management"
+                                    class="hover:text-white transition-colors flex items-center gap-2">Management</a>
+                            </li>
                         </ul>
                     </div>
                     <div>
@@ -1197,9 +1017,9 @@
                     <div>
                         <h5 class="font-bold text-xs uppercase tracking-[0.2em] text-[#6b8f7a] mb-6">Resources</h5>
                         <ul class="space-y-4 text-sm text-emerald-100/60 font-medium">
-                            <li><a href="#" class="hover:text-white transition-colors">Documentation</a></li>
-                            <li><a href="#" class="hover:text-white transition-colors">API Reference</a></li>
-                            <li><a href="#" class="hover:text-white transition-colors">Status</a></li>
+                            <li><a href="https://github.com/off-by-2/sal"
+                                    class="hover:text-white transition-colors">GitHub Repository</a></li>
+                            <li><a href="#blog" class="hover:text-white transition-colors">Blog</a></li>
                             <li><a href="#security" class="hover:text-white transition-colors">Security</a></li>
                         </ul>
                     </div>
@@ -1213,7 +1033,7 @@
             <div
                 class="flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest text-emerald-100/30 font-bold">
                 <div class="flex items-center gap-2 text-center md:text-left">
-                    <span>© 2025 OFF BY 2.</span>
+                    <span>© 2026 OFF BY 2.</span>
                     <span class="w-1 h-1 rounded-full bg-[#6b8f7a]/50"></span>
                     <span>All rights reserved.</span>
                 </div>
@@ -1223,12 +1043,6 @@
                     <a href="#" class="hover:text-white transition-colors">HIPAA</a>
                 </div>
             </div>
-        </div>
-
-        <!-- Attractor Canvas -->
-        <div
-            class="absolute bottom-10 right-10 md:right-20 w-[300px] h-[300px] md:w-[500px] md:h-[500px] pointer-events-none opacity-40 md:opacity-60 translate-x-1/4 translate-y-1/4 mix-blend-screen">
-            <canvas id="footer-flower" class="w-full h-full"></canvas>
         </div>
     </footer>
 
@@ -1400,123 +1214,7 @@
                 });
             }
 
-            // 2. Footer Halvorsen Flower
-            initFooterFlower();
         });
-
-        function initFooterFlower() {
-            const canvas = document.getElementById('footer-flower');
-            if (!canvas) return;
-
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 100);
-            // Position camera to best show the heart shape
-            camera.position.set(15, 10, 25);
-            camera.lookAt(0, 0, 0);
-
-            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-            renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-            // Halvorsen Attractor with color gradient
-            const a = 1.4;
-            let x = -1, y = 0, z = 0; // Better initial condition for heart shape
-            const dt = 0.004;
-            const iterations = 8000;
-            const points = [];
-            const colors = [];
-
-            // Generate trajectory with color gradient for DARK BACKGROUND
-            // We want colors to be light/bright
-            for (let i = 0; i < iterations; i++) {
-                const dx = -a * x - 4 * y - 4 * z - y * y;
-                const dy = -a * y - 4 * z - 4 * x - z * z;
-                const dz = -a * z - 4 * x - 4 * y - x * x;
-
-                x += dx * dt;
-                y += dy * dt;
-                z += dz * dt;
-
-                points.push(new THREE.Vector3(x, y, z));
-
-                // Create gradient from mint to white to emerald
-                // Lightness should be high (0.6 - 0.9) to stand out against dark bg
-                const t = i / iterations;
-                const hue = 0.4 + t * 0.15; // Greenish range
-                const saturation = 0.8;
-                const lightness = 0.6 + t * 0.3; // Bright
-
-                const color = new THREE.Color();
-                color.setHSL(hue, saturation, lightness);
-                colors.push(color.r, color.g, color.b);
-            }
-
-            // Create line geometry with vertex colors
-            const geometry = new THREE.BufferGeometry().setFromPoints(points);
-            geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
-
-            const material = new THREE.LineBasicMaterial({
-                vertexColors: true,
-                linewidth: 2,
-                opacity: 0.8,
-                transparent: true,
-                blending: THREE.AdditiveBlending // Makes it glow
-            });
-
-            const line = new THREE.Line(geometry, material);
-
-            // Center and scale the attractor
-            geometry.computeBoundingBox();
-            const center = new THREE.Vector3();
-            geometry.boundingBox.getCenter(center);
-            line.position.sub(center);
-            line.scale.setScalar(2.0);
-
-            scene.add(line);
-
-            // Add a second, lighter overlay for depth
-            const overlayMaterial = new THREE.LineBasicMaterial({
-                color: 0xd1fae5, // Light emerald
-                linewidth: 1,
-                opacity: 0.15,
-                transparent: true,
-                blending: THREE.AdditiveBlending
-            });
-            const overlayLine = new THREE.Line(geometry.clone(), overlayMaterial);
-            overlayLine.position.copy(line.position);
-            overlayLine.scale.copy(line.scale);
-            // Offset rotation slightly for depth effect
-            overlayLine.scale.multiplyScalar(1.02);
-            scene.add(overlayLine);
-
-            let time = 0;
-            function animate() {
-                requestAnimationFrame(animate);
-                time += 0.005; // Slow rotation
-
-                // Gentle rotating animation to show the heart from different angles
-                line.rotation.y = Math.sin(time * 0.2) * 0.2;
-                line.rotation.x = Math.cos(time * 0.1) * 0.1 + 0.1;
-                line.rotation.z += 0.001;
-
-                overlayLine.rotation.y = line.rotation.y;
-                overlayLine.rotation.x = line.rotation.x;
-                overlayLine.rotation.z = line.rotation.z;
-
-                renderer.render(scene, camera);
-            }
-            animate();
-
-            // Handle resize
-            const parent = canvas.parentElement;
-            window.addEventListener('resize', () => {
-                const width = parent.clientWidth;
-                const height = parent.clientHeight;
-                renderer.setSize(width, height);
-                camera.aspect = width / height;
-                camera.updateProjectionMatrix();
-            });
-        }
     </script>
 </body>
 
