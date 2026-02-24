@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, Leaf, Github } from "lucide-react";
+import { Menu, Github } from "lucide-react";
 import { useState } from "react";
 
 export default function Header() {
@@ -16,9 +16,7 @@ export default function Header() {
                 <div className="px-6 md:px-8 mx-auto flex items-center justify-between h-20">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-3 group">
-                        <div className="w-10 h-10 rounded-xl bg-[#1f3d2b] flex items-center justify-center text-[#d1f07b] shadow-sm group-hover:scale-105 transition-transform">
-                            <Leaf className="w-5 h-5" />
-                        </div>
+                        <img src="/logo.svg" alt="Salvia Logo" className="w-10 h-10 shadow-sm group-hover:scale-105 transition-transform" />
                         <span className="font-serif font-bold text-2xl tracking-tight text-[#1f3d2b]">
                             Salvia.
                         </span>
