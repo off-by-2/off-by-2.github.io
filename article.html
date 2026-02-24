@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Checklist Protocols Reduce OP Never-Events | Salvia Blog</title>
+    <meta name="description"
+        content="Discover how mandatory instrument image verification and strict checklist workflows are eliminating post-operative mistakes in modern clinics based on recent literature.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://off-by-2.github.io/article.html">
+    <meta property="og:title" content="How Checklist Protocols Reduce OP Never-Events">
+    <meta property="og:description"
+        content="Discover how mandatory instrument image verification and strict checklist workflows are eliminating post-operative mistakes.">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind & Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .btn-shadow {
+            box-shadow: 0 4px 14px 0 rgba(107, 143, 122, 0.39);
+        }
+
+        .prose p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #3d5f4d;
+        }
+
+        .prose h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1f3d2b;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .prose h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2f5a43;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .prose ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #3d5f4d;
+            line-height: 1.8;
+        }
+
+        .prose li {
+            margin-bottom: 0.5rem;
+        }
+
+        .prose blockquote {
+            border-left: 4px solid #6b8f7a;
+            padding-left: 1.5rem;
+            font-style: italic;
+            color: #2f5a43;
+            margin-bottom: 1.5rem;
+            background: #f7f9f6;
+            padding: 1.5rem;
+            border-radius: 0 1rem 1rem 0;
+        }
+    </style>
+</head>
+
+<body class="antialiased text-[#1f3d2b]">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-[#6b8f7a]/10"
+        id="navbar">
+        <div class="px-6 md:px-8 mx-auto flex items-center justify-between h-20">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div
+                    class="w-10 h-10 rounded-xl bg-[#1f3d2b] flex items-center justify-center text-[#d1f07b] shadow-sm group-hover:scale-105 transition-transform">
+                    <i data-lucide="leaf" class="w-5 h-5"></i>
+                </div>
+                <span class="font-serif font-bold text-2xl tracking-tight text-[#1f3d2b]">Salvia.</span>
+            </a>
+
+            <div class="hidden md:flex gap-10 text-sm font-medium text-[#2f5a43]">
+                <a href="index.html#documentation" class="hover:text-[#1f3d2b] transition-colors">Documentation</a>
+                <a href="index.html#compliance" class="hover:text-[#1f3d2b] transition-colors">Compliance</a>
+                <a href="blog.html" class="text-[#1f3d2b] transition-colors">Blog</a>
+            </div>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://github.com/off-by-2/sal"
+                    class="text-sm font-bold text-[#1f3d2b] hover:text-[#6b8f7a] transition-colors flex items-center gap-2">
+                    <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                </a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-[#1f3d2b]"><i data-lucide="menu"
+                    class="w-6 h-6"></i></button>
+        </div>
+    </nav>
+
+    <!-- ARTICLE HEADER -->
+    <header class="pt-32 pb-16 md:pt-40 md:pb-24 bg-emerald-50 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-emerald-100 to-teal-50 opacity-50"></div>
+        <div class="max-w-3xl mx-auto px-4 md:px-6 relative z-10">
+            <div class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-[#6b8f7a] mb-6">
+                <a href="blog.html" class="hover:text-[#1f3d2b] transition-colors flex items-center gap-1"><i
+                        data-lucide="arrow-left" class="w-3 h-3"></i> Back to Blog</a>
+                <span>•</span>
+                <span class="bg-white/50 px-2 py-1 rounded">Compliance</span>
+            </div>
+
+            <h1
+                class="text-4xl sm:text-5xl md:text-6xl font-serif font-bold tracking-tight text-[#1f3d2b] leading-[1.1] mb-6">
+                How Checklist Protocols Reduce OP Never-Events
+            </h1>
+
+            <div class="flex items-center gap-4 mt-8 pt-8 border-t border-[#6b8f7a]/20">
+                <div
+                    class="w-12 h-12 rounded-full bg-[#1f3d2b] flex items-center justify-center text-white font-serif font-bold">
+                    SM</div>
+                <div>
+                    <p class="font-bold text-[#1f3d2b] text-sm">Dr. Sarah Miller</p>
+                    <p class="text-sm text-[#6b8f7a]">Published Feb 24, 2026 • 5 min read</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ARTICLE BODY -->
+    <article class="py-16 md:py-24">
+        <div class="max-w-3xl mx-auto px-4 md:px-6 prose prose-lg">
+            <p class="text-xl font-light">"Never events"—the kind of serious, preventable medical errors that should,
+                theoretically, never happen. Yet, despite immense technological advances in healthcare, wrong-site
+                surgeries and the unintended retention of foreign objects remain persistent challenges in operating
+                rooms worldwide.</p>
+
+            <p>According to The Joint Commission's 2023 Sentinel Event Data, wrong surgery and unintended retention of
+                foreign objects each represented 8% of the 1,411 reported sentinel events. Disturbingly, reports of
+                wrong surgery increased by 26% from the previous year, while unintended retention rose by 11%.</p>
+
+            <h2>The Statistics Behind the Checklists</h2>
+
+            <p>The implementation of surgical safety checklists (such as the WHO Surgical Safety Checklist) was designed
+                specifically to combat these statistics by forcing pauses and standardized verification points into
+                chaotic workflows.</p>
+
+            <p>Historical data and systematic reviews demonstrate the undeniable efficacy of these protocols:</p>
+
+            <ul>
+                <li><strong>Complications:</strong> Meta-analyses have indicated a massive <strong>37.9%
+                        reduction</strong> in the risk of total complications following checklist implementation.</li>
+                <li><strong>Surgical Site Infections:</strong> Studies show up to a <strong>45.5% reduction</strong> in
+                    surgical site infections simply by adhering to strict preoperative verification points.</li>
+                <li><strong>Mortality:</strong> The most significant metric is a documented <strong>15.3% to 47%
+                        relative decrease</strong> in perioperative mortality rates globally.</li>
+                <li><strong>Unplanned Returns:</strong> Checklists have been directly linked to a <strong>32.1%
+                        reduction</strong> in unplanned returns to the operating room.</li>
+            </ul>
+
+            <blockquote>
+                "Checklists do not replace clinical judgment; they secure it. They create a psychological safety net
+                that allows every team member, regardless of hierarchy, to verify truth."
+            </blockquote>
+
+            <h2>Why Old Protocols Are Still Failing (And How to Fix It)</h2>
+
+            <p>If the data is so conclusive, why did sentinel events rise in 2023?</p>
+
+            <p>The root cause analysis often points to <strong>insufficient timeout procedures</strong> and
+                <strong>inadequate shared understanding</strong> among team members. When a checklist is treated as a
+                manual, paper-based "tick-box" exercise rather than an active, verifiable protocol, errors slip through.
+            </p>
+
+            <h3>The Mandatory Verification Shift</h3>
+            <p>Modern clinical platforms like Salvia address this by moving from passive paper checklists to active,
+                digital verification workflows. To eliminate events like Retained Surgical Items (RSIs), protocols must
+                enforce photographic evidence.</p>
+            <p>For example, instead of merely checking a box that says "instruments counted," a robust system requires
+                the circulating nurse to upload an image of the instrument tray post-operation. The workflow cannot
+                advance until this verification is logged and timestamped with the user's ID.</p>
+
+            <h2>The Path Forward</h2>
+            <p>Reducing OP never-events isn't about blaming clinicians; it's about acknowledging human fallibility and
+                building systems that refuse to let those errors harm patients. By integrating strict, digitally
+                verified checklists into the core of surgical documentation, clinics can actively enforce the standards
+                that the statistics prove save lives.</p>
+
+            <hr class="my-12 border-slate-200">
+
+            <div class="bg-emerald-50 rounded-2xl p-8 text-center mt-12">
+                <h3 class="font-serif font-bold text-2xl text-[#1f3d2b] mb-4">Want to mandate safety in your clinic?
+                </h3>
+                <p class="text-[#3d5f4d] mb-6">Salvia's open-source platform allows you to build mandatory
+                    image-verification checklists directly into your documentation workflow.</p>
+                <a href="https://github.com/off-by-2/sal"
+                    class="inline-flex items-center gap-2 bg-[#1f3d2b] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#3d5f4d] transition-colors">
+                    View Salvia on GitHub <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#1f3d2b] text-white pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-6 text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <a href="index.html" class="flex items-center gap-3">
+                    <span class="font-serif font-bold text-2xl">Salvia.</span>
+                </a>
+                <div class="flex gap-8 text-sm font-medium text-emerald-100/60">
+                    <a href="index.html" class="hover:text-white transition-colors">Platform</a>
+                    <a href="https://github.com/off-by-2/sal" class="hover:text-white transition-colors">GitHub</a>
+                    <a href="blog.html" class="hover:text-white transition-colors">Blog</a>
+                </div>
+            </div>
+            <div
+                class="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold uppercase tracking-widest text-emerald-100/30">
+                <span>© 2026 OFF BY 2. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script> lucide.createIcons(); </script>
+</body>
+
+</html>
