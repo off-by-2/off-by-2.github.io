@@ -50,7 +50,7 @@ export default function Header() {
                             href="https://github.com/off-by-2/sal"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-sm font-bold text-[#1f3d2b] hover:text-[#6b8f7a] transition-colors flex items-center gap-2"
+                            className="text-sm font-bold text-[#1f3d2b] hover:text-[#4a725b] transition-colors flex items-center gap-2"
                         >
                             <Github className="w-4 h-4" /> GitHub
                         </a>
@@ -62,6 +62,7 @@ export default function Header() {
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                         className="md:hidden text-[#1f3d2b]"
+                        aria-label={mobileMenuOpen ? "Close Mobile Menu" : "Open Mobile Menu"}
                     >
                         <Menu className="w-6 h-6" />
                     </button>

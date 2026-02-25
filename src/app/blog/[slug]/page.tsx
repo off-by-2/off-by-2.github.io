@@ -30,7 +30,7 @@ export default async function BlogPost(props: { params: Promise<{ slug: string }
                 <header className="pt-32 pb-16 md:pt-40 md:pb-24 bg-emerald-50 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 to-teal-50 opacity-50"></div>
                     <div className="max-w-3xl mx-auto px-4 md:px-6 relative z-10">
-                        <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-[#6b8f7a] mb-6">
+                        <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-[#4a725b] mb-6">
                             <Link href="/blog" className="hover:text-[#1f3d2b] transition-colors flex items-center gap-1">
                                 <ArrowLeft className="w-3 h-3" /> Back to Blog
                             </Link>
@@ -48,7 +48,7 @@ export default async function BlogPost(props: { params: Promise<{ slug: string }
                             </div>
                             <div>
                                 <p className="font-bold text-[#1f3d2b] text-sm">Dr. Sarah Miller</p>
-                                <p className="text-sm text-[#6b8f7a]">
+                                <p className="text-sm text-[#4a725b]">
                                     Published {postData.date ? format(new Date(postData.date), 'MMM d, yyyy') : 'Unknown Date'} • {postData.readTime}
                                 </p>
                             </div>

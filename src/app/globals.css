@@ -45,7 +45,7 @@ h3,
   width: 100px;
   height: 100px;
   background: linear-gradient(135deg, #5a8a6e 0%, #1f3d2b 100%);
-  border-radius: 50%;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,7 +57,8 @@ h3,
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
-  animation: morphBlob 8s ease-in-out infinite;
+  animation: morphBlob 8s linear infinite;
+  will-change: transform;
 }
 
 @media (min-width: 768px) {
@@ -68,16 +69,16 @@ h3,
 }
 
 @keyframes morphBlob {
-
-  0%,
-  100% {
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    transform: translate(-50%, -50%) scale(1);
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
   }
 
   50% {
-    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-    transform: translate(-50%, -50%) scale(1.05);
+    transform: translate(-50%, -50%) rotate(180deg) scale(1.05);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
   }
 }
 
@@ -156,29 +157,177 @@ h3,
 }
 
 .mobile-frame {
-  border: 8px solid #1f2937;
-  border-radius: 36px;
+  border: 12px solid #0f172a;
+  border-radius: 48px;
   overflow: hidden;
   position: relative;
   background: #fff;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), inset 0 0 0 2px #334155;
   width: 100%;
   max-width: 320px;
-  height: 600px;
+  height: 650px;
   margin: 0 auto;
 }
 
-.mobile-notch {
+.dynamic-island {
   position: absolute;
-  top: 0;
+  top: 12px;
   left: 50%;
   transform: translateX(-50%);
-  width: 120px;
-  height: 24px;
-  background: #1f2937;
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
+  width: 100px;
+  height: 28px;
+  background: #0f172a;
+  border-radius: 20px;
   z-index: 20;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Siri-like Wave Animation */
+.siri-container {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.siri-wave {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: blur(8px) contrast(200%);
+  mix-blend-mode: multiply;
+}
+
+.siri-line {
+  position: absolute;
+  border-radius: 100%;
+  animation: siriPulseX 2s infinite ease-in-out alternate;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.siri-line:nth-child(1) {
+  width: 200px;
+  height: 20px;
+  background: rgba(45, 212, 191, 0.7);
+  /* Cyan */
+  animation-duration: 2.1s;
+  animation-delay: -0.2s;
+  filter: blur(6px);
+}
+
+.siri-line:nth-child(2) {
+  width: 160px;
+  height: 30px;
+  background: rgba(168, 85, 247, 0.6);
+  /* Purple */
+  animation-duration: 1.8s;
+  animation-delay: -0.5s;
+  filter: blur(8px);
+}
+
+.siri-line:nth-child(3) {
+  width: 240px;
+  height: 15px;
+  background: rgba(59, 130, 246, 0.5);
+  /* Blue */
+  animation-duration: 2.5s;
+  animation-delay: -1.1s;
+  filter: blur(5px);
+}
+
+.siri-line:nth-child(4) {
+  width: 180px;
+  height: 25px;
+  background: rgba(236, 72, 153, 0.4);
+  /* Pink */
+  animation-duration: 1.5s;
+  animation-delay: -0.8s;
+  filter: blur(7px);
+}
+
+.siri-line:nth-child(5) {
+  width: 120px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.8);
+  /* Core white glow */
+  animation-duration: 1.2s;
+  animation-delay: 0s;
+  filter: blur(4px);
+  mix-blend-mode: overlay;
+}
+
+@keyframes siriPulseX {
+  0% {
+    transform: scaleX(0.7) scaleY(0.4) skewX(-15deg) translateY(5px);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scaleX(1.1) scaleY(1.3) skewX(5deg) translateY(-3px);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: scaleX(0.85) scaleY(0.6) skewX(15deg) translateY(2px);
+    opacity: 0.7;
+  }
+}
+
+/* Form Processing Animations */
+.skeleton-pulse {
+  animation: skelPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  will-change: opacity;
+}
+
+@keyframes skelPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .4;
+  }
+}
+
+.glow-border {
+  position: relative;
+  border: 1px solid transparent;
+}
+
+.glow-border::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+  pointer-events: none;
+  animation: glowCycle 3s infinite linear;
+  will-change: opacity;
+}
+
+@keyframes glowCycle {
+  0% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.25;
+  }
 }
 
 /* Blog Prose Styles */

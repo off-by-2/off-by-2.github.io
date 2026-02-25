@@ -82,7 +82,7 @@ export default function Home() {
 
       <main>
         {/* 2. HERO + 3D */}
-        <section className="min-h-[85vh] md:min-h-[90vh] flex flex-col justify-center items-center px-4 md:px-6 pt-28 md:pt-32 pb-12 md:pb-20 overflow-hidden">
+        <section className="min-h-[60vh] md:min-h-[90vh] flex flex-col justify-center items-center px-4 md:px-6 pt-32 pb-0 md:pb-20 overflow-hidden">
           <div className="max-w-4xl text-center mb-10 md:mb-16">
             <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight text-[#1f3d2b] leading-[1.1] md:leading-[1.05]">
               Stop documenting.<br /><span className="italic text-[#6b8f7a]">Start caring.</span>
@@ -93,7 +93,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="w-full max-w-7xl px-2 md:px-4">
+          <div className="w-full max-w-7xl px-2 md:px-4 hidden md:block">
             <HeroScene />
           </div>
         </section>

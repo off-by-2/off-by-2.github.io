@@ -19,21 +19,21 @@ const CategoryColors: Record<string, { bg: string, ring: string, iconBg: string,
         ring: 'from-emerald-100 to-teal-50',
         iconBg: 'text-emerald-300',
         iconText: 'text-emerald-300',
-        textHover: 'group-hover:text-[#6b8f7a]'
+        textHover: 'group-hover:text-[#4a725b]'
     },
     'Open Source': {
         bg: 'bg-blue-50',
         ring: 'from-blue-100 to-indigo-50',
         iconBg: 'text-blue-300',
         iconText: 'text-blue-300',
-        textHover: 'group-hover:text-[#6b8f7a]'
+        textHover: 'group-hover:text-[#4a725b]'
     },
     'Workflows': {
         bg: 'bg-amber-50',
         ring: 'from-amber-100 to-orange-50',
         iconBg: 'text-amber-300',
         iconText: 'text-amber-300',
-        textHover: 'group-hover:text-[#6b8f7a]'
+        textHover: 'group-hover:text-[#4a725b]'
     }
 };
 
@@ -49,7 +49,7 @@ export default function BlogPage() {
             <main>
                 {/* HEADER */}
                 <section className="min-h-[40vh] flex flex-col justify-center items-center px-4 md:px-6 pt-32 pb-16 bg-white border-b border-slate-100 text-center">
-                    <span className="text-[#6b8f7a] uppercase tracking-widest text-xs font-bold bg-[#6b8f7a]/10 px-3 py-1 rounded-full border border-[#6b8f7a]/20 mb-6">Salvia Resources</span>
+                    <span className="text-[#4a725b] uppercase tracking-widest text-xs font-bold bg-[#6b8f7a]/10 px-3 py-1 rounded-full border border-[#6b8f7a]/20 mb-6">Salvia Resources</span>
                     <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold tracking-tight text-[#1f3d2b] leading-[1.1]">
                         Latest Insights
                     </h1>
@@ -74,7 +74,7 @@ export default function BlogPage() {
                                                 <Icon className="w-16 h-16" />
                                             </div>
                                         </div>
-                                        <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#6b8f7a] mb-3">
+                                        <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#4a725b] mb-3">
                                             <span>{post.category}</span> • <span>{format(new Date(post.date), 'MMM d, yyyy')}</span>
                                         </div>
                                         <h4 className={`font-serif font-bold text-2xl text-[#1f3d2b] ${colors.textHover} transition-colors mb-3`}>
