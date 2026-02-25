@@ -120,36 +120,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Floating UI Elements over 3D (Z-index ensures they stay on top) */}
-          <div className="absolute right-[5%] bottom-[15%] hidden lg:block z-20">
-            <div className="bg-[#1a1a1a]/90 backdrop-blur-xl text-white p-6 rounded-3xl w-72 shadow-2xl border border-white/10 transform transition-transform hover:-translate-y-2">
-              <h4 className="text-2xl font-bold font-serif mb-2">100% HIPAA</h4>
-              <p className="text-sm text-white/70 font-light mb-4 flex items-start gap-2">
-                <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-                Salvia guarantees absolute privacy and encrypted audit trails.
-              </p>
-              <div className="flex gap-2 items-center">
-                <div className="flex-1 h-1 bg-white/20 rounded-full overflow-hidden">
-                  <div className="w-full h-full bg-emerald-400"></div>
-                </div>
-                <span className="text-xs font-bold text-emerald-400">Secure</span>
-              </div>
-            </div>
-          </div>
 
-          <div className="absolute right-[35%] bottom-[30%] hidden lg:block z-20">
-            <div className="bg-white/90 backdrop-blur-xl p-5 rounded-3xl shadow-2xl border border-emerald-100 transform transition-transform hover:-translate-y-2 animate-bounce-slow">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600">
-                  <span className="font-bold text-xl">+</span>
-                </div>
-                <div>
-                  <h4 className="font-bold text-[#1f3d2b]">10k Hours</h4>
-                  <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Saved Annually</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
 
         {/* 3. THE WORKSPACE / MANAGEMENT HUB */}
