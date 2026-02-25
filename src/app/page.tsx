@@ -82,19 +82,70 @@ export default function Home() {
 
       <main>
         {/* 2. HERO + 3D */}
-        <section className="min-h-[60vh] md:min-h-[90vh] flex flex-col justify-center items-center px-4 md:px-6 pt-32 pb-0 md:pb-20 overflow-hidden">
-          <div className="max-w-4xl text-center mb-10 md:mb-16">
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight text-[#1f3d2b] leading-[1.1] md:leading-[1.05]">
-              Stop documenting.<br /><span className="italic text-[#6b8f7a]">Start caring.</span>
-            </h1>
-            <p className="mt-6 md:mt-8 text-base md:text-xl text-[#3d5f4d] max-w-2xl mx-auto leading-relaxed font-light px-2">
-              Salvia unites Care Documentation, Compliance protocols, and Patient Feedback under one open-source roof.
-              Eliminating human mistakes so you can focus on patient outcomes.
-            </p>
+        <section className="relative min-h-[90vh] md:min-h-screen flex items-center pt-32 pb-20 overflow-hidden bg-gradient-to-br from-white to-[#f7f9f6]">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+            {/* Left Content */}
+            <div className="max-w-2xl">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight text-[#1f3d2b] leading-[1.05]">
+                Stop documenting.<br /><span className="italic text-[#6b8f7a]">Start caring.</span>
+              </h1>
+              <p className="mt-6 md:mt-8 text-lg md:text-xl text-[#3d5f4d] leading-relaxed font-light">
+                Salvia unites Care Documentation, Compliance protocols, and Patient Feedback under one open-source roof.
+                Eliminating human mistakes so you can focus on patient outcomes.
+              </p>
+
+              <div className="mt-10 flex flex-wrap gap-4 items-center">
+                <a href="#demo" className="px-8 py-4 bg-[#1f3d2b] text-white rounded-full font-bold text-sm tracking-wide hover:bg-[#2f5a43] transition-all flex items-center gap-2 btn-shadow">
+                  See it in Action <ArrowRight className="w-4 h-4" />
+                </a>
+                <a href="https://github.com/off-by-2/sal" target="_blank" className="px-8 py-4 bg-white border border-slate-200 text-[#1f3d2b] rounded-full font-bold text-sm tracking-wide hover:bg-slate-50 transition-all flex items-center gap-2">
+                  <Github className="w-4 h-4" /> Open Source
+                </a>
+              </div>
+            </div>
+
+            {/* Right Content - 3D Object Area Placeholder (Empty grid item for layout) */}
+            <div className="hidden lg:block h-[600px] w-full relative">
+              {/* This space is occupied by the absolutely positioned 3D scene below */}
+            </div>
           </div>
 
-          <div className="w-full max-w-7xl px-2 md:px-4 hidden md:block">
-            <HeroScene />
+          {/* 3D Scene Layer (Absolute positioning pushes it to the right) */}
+          <div className="absolute top-0 right-0 w-full lg:w-3/5 h-[60vh] lg:h-full z-0 pointer-events-none lg:pointer-events-auto opacity-30 lg:opacity-100 flex items-center justify-center">
+            <div className="w-full h-full relative -right-1/4 scale-150">
+              <HeroScene />
+            </div>
+          </div>
+
+          {/* Floating UI Elements over 3D (Z-index ensures they stay on top) */}
+          <div className="absolute right-[5%] bottom-[15%] hidden lg:block z-20">
+            <div className="bg-[#1a1a1a]/90 backdrop-blur-xl text-white p-6 rounded-3xl w-72 shadow-2xl border border-white/10 transform transition-transform hover:-translate-y-2">
+              <h4 className="text-2xl font-bold font-serif mb-2">100% HIPAA</h4>
+              <p className="text-sm text-white/70 font-light mb-4 flex items-start gap-2">
+                <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                Salvia guarantees absolute privacy and encrypted audit trails.
+              </p>
+              <div className="flex gap-2 items-center">
+                <div className="flex-1 h-1 bg-white/20 rounded-full overflow-hidden">
+                  <div className="w-full h-full bg-emerald-400"></div>
+                </div>
+                <span className="text-xs font-bold text-emerald-400">Secure</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="absolute right-[35%] bottom-[30%] hidden lg:block z-20">
+            <div className="bg-white/90 backdrop-blur-xl p-5 rounded-3xl shadow-2xl border border-emerald-100 transform transition-transform hover:-translate-y-2 animate-bounce-slow">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600">
+                  <span className="font-bold text-xl">+</span>
+                </div>
+                <div>
+                  <h4 className="font-bold text-[#1f3d2b]">10k Hours</h4>
+                  <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Saved Annually</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
