@@ -77,9 +77,9 @@ export default function BlogPage() {
                                         <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#4a725b] mb-3">
                                             <span>{post.category}</span> • <span>{format(new Date(post.date), 'MMM d, yyyy')}</span>
                                         </div>
-                                        <h4 className={`font-serif font-bold text-2xl text-[#1f3d2b] ${colors.textHover} transition-colors mb-3`}>
+                                        <h2 className={`font-serif font-bold text-2xl text-[#1f3d2b] ${colors.textHover} transition-colors mb-3`}>
                                             {post.title}
-                                        </h4>
+                                        </h2>
                                         <p className="text-[#3d5f4d] font-light text-sm line-clamp-3">
                                             {post.description}
                                         </p>
