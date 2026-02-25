@@ -1,6 +1,5 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import HeroScene from '@/components/HeroScene';
 import Link from 'next/link';
 import { getSortedPostsData } from '@/lib/markdown';
 import { format } from 'date-fns';
@@ -110,10 +109,14 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 3D Scene Layer (Absolute positioning pushes it to the right) */}
+          {/* Static Image Layer (Absolute positioning pushes it to the right) */}
           <div className="absolute top-0 right-0 w-full lg:w-3/5 h-[60vh] lg:h-full z-0 pointer-events-none lg:pointer-events-auto opacity-30 lg:opacity-100 flex items-center justify-center">
-            <div className="w-full h-full relative -right-1/4 scale-150">
-              <HeroScene />
+            <div className="w-full h-full relative lg:-right-48 scale-150 lg:scale-[1.5] flex items-center justify-center drop-shadow-2xl">
+              <img
+                src="/hero-rocks.png"
+                alt="Moss covered rocks"
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
 
