@@ -582,10 +582,10 @@ export default function Home() {
                 const colors = CategoryColors[post.category] || defaultColors;
 
                 return (
-                  <Link href={`/ blog / ${post.slug} `} key={post.slug} className="group block">
-                    <div className={`w - full h - 48 ${colors.bg} rounded - 2xl mb - 4 overflow - hidden relative`}>
-                      <div className={`absolute inset - 0 bg - gradient - to - br ${colors.ring} opacity - 50 group - hover: scale - 105 transition - transform duration - 500`}></div>
-                      <div className={`absolute inset - 0 flex items - center justify - center ${colors.iconBg} `}>
+                  <Link href={`/blog/${post.slug}`} key={post.slug} className="group block">
+                    <div className={`w-full h-48 ${colors.bg} rounded-2xl mb-4 overflow-hidden relative`}>
+                      <div className={`absolute inset-0 bg-gradient-to-br ${colors.ring} opacity-50 group-hover:scale-105 transition-transform duration-500`}></div>
+                      <div className={`absolute inset-0 flex items-center justify-center ${colors.iconBg}`}>
                         <Icon className="w-12 h-12" />
                       </div>
                     </div>
