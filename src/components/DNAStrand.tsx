@@ -95,7 +95,7 @@ export default function DNAStrand() {
                     <tubeGeometry args={[curve1, 300, 0.4, 16, false]} />
                     <meshStandardMaterial
                         color="#10b981"
-                        emissive="#047857"
+                        emissive="#0f3127ff"
                         emissiveIntensity={1.5}
                         roughness={0.2}
                         metalness={0.6}
@@ -107,7 +107,7 @@ export default function DNAStrand() {
                     <tubeGeometry args={[curve2, 300, 0.4, 16, false]} />
                     <meshStandardMaterial
                         color="#10b981"
-                        emissive="#047857"
+                        emissive="#0f3127ff"
                         emissiveIntensity={1.5}
                         roughness={0.2}
                         metalness={0.6}
@@ -128,7 +128,7 @@ export default function DNAStrand() {
                         <mesh key={i} position={dummy.position} rotation={dummy.rotation}>
                             <cylinderGeometry args={[0.08, 0.08, distance, 12]} />
                             <meshStandardMaterial
-                                color="#a7f3d0"
+                                color="#36f356ff"
                                 emissive="#34d399"
                                 emissiveIntensity={0.8}
                                 roughness={0.3}
