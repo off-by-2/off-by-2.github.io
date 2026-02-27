@@ -82,12 +82,19 @@ export default function Home() {
     <>
       <Header />
 
-      <main>
-        {/* 2. HERO + 3D */}
-        <section className="relative min-h-[90vh] md:min-h-screen flex items-center pt-32 pb-20 overflow-hidden bg-gradient-to-br from-white to-[#f7f9f6]">
-          <div className="max-w-7xl mx-auto px-4 md:px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+      <main className="relative overflow-hidden w-full">
+        {/* 3D Scene spanning sections 1 and 2 */}
+        <div className="absolute top-[-10vh] right-[-20vw] w-[120vw] h-[180vh] z-0 pointer-events-none opacity-80 md:opacity-100">
+          <div className="w-full h-full">
+            <Hero3DScene />
+          </div>
+        </div>
+
+        {/* 2. HERO (Content) */}
+        <section className="relative min-h-[90vh] md:min-h-screen flex items-center pt-32 pb-20 z-10">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <div className="max-w-2xl">
+            <div className="max-w-2xl bg-white/40 backdrop-blur-sm p-4 rounded-3xl -ml-4">
               <h1 className="text-4xl sm:text-5xl md:text-[#4a725b]xl lg:text-[#4a725b]xl font-serif tracking-tight text-[#1f3d2b] leading-[1.05]">
                 Stop documenting.<br /><span className="italic text-[#4a725b]">Start caring.</span>
               </h1>
@@ -100,30 +107,23 @@ export default function Home() {
                 <a href="#demo" className="px-8 py-4 bg-[#1f3d2b] text-white rounded-full font-bold text-sm tracking-wide hover:bg-[#2f5a43] transition-all flex items-center gap-2 btn-shadow">
                   See it in Action <ArrowRight className="w-4 h-4" />
                 </a>
-                <a href="https://github.com/off-by-2/sal" target="_blank" className="px-8 py-4 bg-white border border-slate-200 text-[#1f3d2b] rounded-full font-bold text-sm tracking-wide hover:bg-slate-50 transition-all flex items-center gap-2">
+                <a href="https://github.com/off-by-2/sal" target="_blank" className="px-8 py-4 bg-white border border-slate-200 text-[#1f3d2b] rounded-full font-bold text-sm tracking-wide hover:bg-slate-50 transition-all flex items-center gap-2 pointer-events-auto">
                   <Github className="w-4 h-4" /> Open Source
                 </a>
               </div>
             </div>
 
-            {/* Right Content - 3D Object Area Placeholder (Empty grid item for layout) */}
             <div className="hidden lg:block h-[600px] w-full relative">
-              {/* This space is occupied by the absolutely positioned 3D scene below */}
-            </div>
-          </div>
-
-          <div className="absolute top-0 right-0 w-full lg:w-1/2 h-[60vh] lg:h-full z-0 opacity-100 flex items-center justify-center pointer-events-auto">
-            {/* 3D Scene Container */}
-            <div className="w-full h-full">
-              <Hero3DScene />
+              {/* Empty column placeholder for symmetry */}
             </div>
           </div>
         </section>
 
         {/* 3. THE WORKSPACE / MANAGEMENT HUB */}
-        <section id="management" className="py-16 md:py-20 bg-slate-50/50">
-          <div className="max-w-7xl mx-auto px-4 md:px-6">
-            <div className="mb-10 md:mb-12 text-center max-w-3xl mx-auto">
+        <section id="management" className="relative py-16 md:py-20 z-10 mix-blend-normal">
+          <div className="absolute inset-0 bg-slate-50/50 backdrop-blur-[2px] -z-10 pointer-events-none"></div>
+          <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
+            <div className="mb-10 md:mb-12 text-center max-w-3xl mx-auto bg-white/70 backdrop-blur-md p-6 rounded-3xl inline-block shadow-sm border border-white/40">
               <p className="text-[10px] font-bold text-[#1f3d2b] uppercase tracking-widest mb-3">Complete Oversight</p>
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#1f3d2b] mb-4">Easy Management Hub</h2>
               <p className="text-[#3d5f4d] text-[#4a725b]ase md:text-lg font-light leading-relaxed">
@@ -133,7 +133,7 @@ export default function Home() {
             </div>
 
             <div className="overflow-x-auto pb-4 md:pb-0 -mx-4 md:mx-0 px-4 md:px-0 scrollbar-hide">
-              <div className="app-window rounded-2xl bg-white ring-1 ring-slate-200 overflow-hidden min-w-[800px] md:min-w-0 max-w-5xl mx-auto border border-slate-200">
+              <div className="app-window rounded-2xl bg-white/95 backdrop-blur-xl ring-1 ring-slate-200/50 overflow-hidden min-w-[800px] md:min-w-0 max-w-5xl mx-auto border border-white shadow-2xl">
                 {/* Header */}
                 <div className="bg-[#f3f3f3] border-b border-slate-200 h-10 flex items-center px-4 justify-between">
                   <div className="flex gap-1.5 w-24">

@@ -8,11 +8,11 @@ export default function DNAStrand() {
     const groupRef = useRef<THREE.Group>(null);
     const particlesRef = useRef<THREE.Points>(null);
 
-    // Configuration for the DNA helix
-    const numTurns = 4; // How many 360 twists
-    const height = 24;   // Total height
-    const radius = 2.5;  // Width of the helix
-    const pointsPerTurn = 30; // Resolution of the curve
+    // Configuration for the DNA helix (longer spanning)
+    const numTurns = 7; // More twists for longer length
+    const height = 45;   // Extended height to cross 2 sections
+    const radius = 3.5;  // Slightly wider
+    const pointsPerTurn = 40; // Resolution of the curve
     const numPoints = numTurns * pointsPerTurn;
 
     // Generate the main backbone curves and rung positions
@@ -22,7 +22,6 @@ export default function DNAStrand() {
         const rungLines = [];
 
         for (let i = 0; i <= numPoints; i++) {
-            // t goes from 0 to 1 along the length of the strand
             const t = i / numPoints;
             const angle = t * Math.PI * 2 * numTurns;
             const y = (t - 0.5) * height; // Center around 0
@@ -54,46 +53,65 @@ export default function DNAStrand() {
         };
     }, []);
 
-    // Generate some ambient floating particles for the "biotech" vibe
-    const particlesCount = 200;
+    // Generate many ambient floating particles for a premium scientific vibe
+    const particlesCount = 800;
     const particles = useMemo(() => {
         const pts = new Float32Array(particlesCount * 3);
+        const sizes = new Float32Array(particlesCount);
+
         for (let i = 0; i < particlesCount; i++) {
-            // Spread particles around the DNA bounds
-            pts[i * 3] = (Math.random() - 0.5) * 15;      // x
-            pts[i * 3 + 1] = (Math.random() - 0.5) * 30;  // y
-            pts[i * 3 + 2] = (Math.random() - 0.5) * 15;  // z
+            // Spread particles across a wide volume
+            pts[i * 3] = (Math.random() - 0.5) * 45;      // x spread
+            pts[i * 3 + 1] = (Math.random() - 0.5) * 70;  // y spread (height)
+            pts[i * 3 + 2] = (Math.random() - 0.5) * 25;  // z depth spread
+
+            // Randomize sizes a bit
+            sizes[i] = Math.random() * 0.15 + 0.05;
         }
-        return pts;
+        return { pts, sizes };
     }, []);
 
     // Animation loop
     useFrame((state, delta) => {
         if (groupRef.current) {
-            groupRef.current.rotation.y += delta * 0.2; // Rotate the whole DNA
+            // Smooth, slow, majestic rotation
+            groupRef.current.rotation.y += delta * 0.1;
         }
         if (particlesRef.current) {
-            // Slowly rotate the floating particles in the opposite direction
-            particlesRef.current.rotation.y -= delta * 0.05;
-            particlesRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.2) * 1;
+            // Slowly rotate the floating particles
+            particlesRef.current.rotation.y -= delta * 0.03;
+            // Particles drift upwards slowly
+            particlesRef.current.position.y = (state.clock.elapsedTime * 0.5) % 30;
         }
     });
 
     return (
         <group>
-            <group ref={groupRef} rotation={[0, 0, Math.PI / 10]}> {/* Slight diagonal angle */}
+            {/* Centered for visibility, tilted diagonally */}
+            <group ref={groupRef} position={[0, 0, 0]} rotation={[0, Math.PI / 8, -Math.PI / 6]}>
 
-                {/* Backbone 1 */}
+                {/* Vibrant Emissive Material Setup for Backbone */}
                 <mesh>
-                    <tubeGeometry args={[curve1, 200, 0.4, 12, false]} />
-                    {/* Neon green emissive material */}
-                    <meshStandardMaterial color="#34d399" emissive="#059669" emissiveIntensity={1.2} roughness={0.2} metalness={0.6} />
+                    <tubeGeometry args={[curve1, 300, 0.4, 16, false]} />
+                    <meshStandardMaterial
+                        color="#10b981"
+                        emissive="#047857"
+                        emissiveIntensity={1.5}
+                        roughness={0.2}
+                        metalness={0.6}
+                    />
                 </mesh>
 
                 {/* Backbone 2 */}
                 <mesh>
-                    <tubeGeometry args={[curve2, 200, 0.4, 12, false]} />
-                    <meshStandardMaterial color="#34d399" emissive="#059669" emissiveIntensity={1.2} roughness={0.2} metalness={0.6} />
+                    <tubeGeometry args={[curve2, 300, 0.4, 16, false]} />
+                    <meshStandardMaterial
+                        color="#10b981"
+                        emissive="#047857"
+                        emissiveIntensity={1.5}
+                        roughness={0.2}
+                        metalness={0.6}
+                    />
                 </mesh>
 
                 {/* Connecting Rungs */}
@@ -101,16 +119,22 @@ export default function DNAStrand() {
                     const distance = rung.p1.distanceTo(rung.p2);
                     const position = rung.p1.clone().lerp(rung.p2, 0.5); // Midpoint
 
-                    // Calculate rotation to point from p1 to p2
                     const dummy = new THREE.Object3D();
                     dummy.position.copy(position);
                     dummy.lookAt(rung.p1);
-                    dummy.rotateX(Math.PI / 2); // Cylinder goes along Y, align to Z (lookAt)
+                    dummy.rotateX(Math.PI / 2);
 
                     return (
                         <mesh key={i} position={dummy.position} rotation={dummy.rotation}>
-                            <cylinderGeometry args={[0.08, 0.08, distance, 8]} />
-                            <meshStandardMaterial color="#6ee7b7" emissive="#10b981" emissiveIntensity={0.8} opacity={0.8} transparent />
+                            <cylinderGeometry args={[0.08, 0.08, distance, 12]} />
+                            <meshStandardMaterial
+                                color="#a7f3d0"
+                                emissive="#34d399"
+                                emissiveIntensity={0.8}
+                                roughness={0.3}
+                                opacity={0.8}
+                                transparent
+                            />
                         </mesh>
                     )
                 })}
@@ -119,9 +143,10 @@ export default function DNAStrand() {
             {/* Floating background particles */}
             <points ref={particlesRef}>
                 <bufferGeometry>
-                    <bufferAttribute attach="attributes-position" count={particlesCount} array={particles} itemSize={3} args={[particles, 3]} />
+                    <bufferAttribute attach="attributes-position" count={particlesCount} array={particles.pts} itemSize={3} args={[particles.pts, 3]} />
+                    <bufferAttribute attach="attributes-size" count={particlesCount} array={particles.sizes} itemSize={1} args={[particles.sizes, 1]} />
                 </bufferGeometry>
-                <pointsMaterial size={0.15} color="#6ee7b7" transparent opacity={0.6} sizeAttenuation={true} />
+                <pointsMaterial size={0.15} color="#34d399" transparent opacity={0.7} sizeAttenuation={true} />
             </points>
         </group>
     );

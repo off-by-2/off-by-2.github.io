@@ -8,7 +8,7 @@ import { Suspense } from "react";
 export default function Hero3DSceneImpl() {
     return (
         <Canvas
-            camera={{ position: [0, 0, 35], fov: 40 }}
+            camera={{ position: [0, 0, 50], fov: 45 }}
             gl={{ antialias: true, alpha: true }} // alpha: true ensures background is transparent
         >
             {/* Lighting setup for the "cinematic, modern biotech" look */}
