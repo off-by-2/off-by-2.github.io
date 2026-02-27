@@ -1,7 +1,7 @@
 "use client";
 
 import { useFrame } from "@react-three/fiber";
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useEffect } from "react";
 import * as THREE from "three";
 
 export default function DNAStrand() {
@@ -16,10 +16,11 @@ export default function DNAStrand() {
     const numPoints = numTurns * pointsPerTurn;
 
     // Generate the main backbone curves and rung positions
-    const { curve1, curve2, rungs } = useMemo(() => {
+    const { curve1, curve2, rungMatrices, rungsCount } = useMemo(() => {
         const pts1 = [];
         const pts2 = [];
-        const rungLines = [];
+        const sMatrices: THREE.Matrix4[] = [];
+        const dummyObj = new THREE.Object3D();
 
         for (let i = 0; i <= numPoints; i++) {
             const t = i / numPoints;
@@ -42,16 +43,37 @@ export default function DNAStrand() {
 
             // Add a connecting "rung" every N points
             if (i % 6 === 0 && i !== 0 && i !== numPoints) {
-                rungLines.push({ p1, p2 });
+                const distance = p1.distanceTo(p2);
+                const position = p1.clone().lerp(p2, 0.5); // Midpoint
+
+                dummyObj.position.copy(position);
+                dummyObj.lookAt(p1);
+                dummyObj.rotateX(Math.PI / 2);
+                dummyObj.scale.set(1, distance, 1);
+                dummyObj.updateMatrix();
+
+                sMatrices.push(dummyObj.matrix.clone());
             }
         }
 
         return {
             curve1: new THREE.CatmullRomCurve3(pts1),
             curve2: new THREE.CatmullRomCurve3(pts2),
-            rungs: rungLines
+            rungMatrices: sMatrices,
+            rungsCount: sMatrices.length
         };
-    }, []);
+    }, [numPoints, numTurns, height, radius]);
+
+    // Set instance matrices on mount
+    const rungsRef = useRef<THREE.InstancedMesh>(null);
+    useEffect(() => {
+        if (rungsRef.current && rungMatrices.length > 0) {
+            rungMatrices.forEach((matrix, i) => {
+                rungsRef.current!.setMatrixAt(i, matrix);
+            });
+            rungsRef.current.instanceMatrix.needsUpdate = true;
+        }
+    }, [rungMatrices]);
 
     // Generate many ambient floating particles for a premium scientific vibe
     const particlesCount = 800;
@@ -115,29 +137,20 @@ export default function DNAStrand() {
                 </mesh>
 
                 {/* Connecting Rungs */}
-                {rungs.map((rung, i) => {
-                    const distance = rung.p1.distanceTo(rung.p2);
-                    const position = rung.p1.clone().lerp(rung.p2, 0.5); // Midpoint
-
-                    const dummy = new THREE.Object3D();
-                    dummy.position.copy(position);
-                    dummy.lookAt(rung.p1);
-                    dummy.rotateX(Math.PI / 2);
-
-                    return (
-                        <mesh key={i} position={dummy.position} rotation={dummy.rotation}>
-                            <cylinderGeometry args={[0.08, 0.08, distance, 12]} />
-                            <meshStandardMaterial
-                                color="#36f356ff"
-                                emissive="#34d399"
-                                emissiveIntensity={0.8}
-                                roughness={0.3}
-                                opacity={0.8}
-                                transparent
-                            />
-                        </mesh>
-                    )
-                })}
+                <instancedMesh
+                    ref={rungsRef}
+                    args={[undefined, undefined, rungsCount]}
+                >
+                    <cylinderGeometry args={[0.08, 0.08, 1, 12]} />
+                    <meshStandardMaterial
+                        color="#36f356ff"
+                        emissive="#34d399"
+                        emissiveIntensity={0.8}
+                        roughness={0.3}
+                        opacity={0.8}
+                        transparent
+                    />
+                </instancedMesh>
             </group>
 
             {/* Floating background particles */}

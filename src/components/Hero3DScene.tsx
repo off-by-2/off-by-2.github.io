@@ -3,14 +3,33 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Float, Environment } from "@react-three/drei";
 import DNAStrand from "./DNAStrand";
-import { Suspense } from "react";
+import { Suspense, useState, useEffect } from "react";
 
 export default function Hero3DScene() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            // Using 768px as standard mobile breakpoint
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    if (isMobile) {
+        return <div className="w-full h-[600px] lg:h-full relative pointer-events-none" />;
+    }
+
     return (
         <div className="w-full h-[600px] lg:h-full relative">
             <Canvas
                 camera={{ position: [0, 0, 18], fov: 45 }}
-                gl={{ antialias: true, alpha: true }} // alpha: true ensures background is transparent
+                // Keep antialias but constrain dpr to avoid extreme retina resolution rendering overhead
+                gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+                dpr={[1, 1.5]}
             >
                 {/* Lighting setup for the "cinematic, modern biotech" look */}
                 <ambientLight intensity={0.2} />

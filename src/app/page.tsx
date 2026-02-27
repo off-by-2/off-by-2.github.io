@@ -122,8 +122,8 @@ export default function Home() {
         {/* 3. THE WORKSPACE / MANAGEMENT HUB */}
         <section id="management" className="relative py-16 md:py-20 z-10 mix-blend-normal">
           <div className="absolute inset-0 bg-slate-50/50 backdrop-blur-[2px] -z-10 pointer-events-none"></div>
-          <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
-            <div className="mb-10 md:mb-12 text-center max-w-3xl mx-auto bg-white/70 backdrop-blur-md p-6 rounded-3xl inline-block shadow-sm border border-white/40">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 text-center">
+            <div className="mb-10 md:mb-12 max-w-3xl mx-auto md:bg-white/70 md:backdrop-blur-md md:p-6 md:rounded-3xl inline-block md:shadow-sm md:border md:border-white/40">
               <p className="text-[10px] font-bold text-[#1f3d2b] uppercase tracking-widest mb-3">Complete Oversight</p>
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#1f3d2b] mb-4">Easy Management Hub</h2>
               <p className="text-[#3d5f4d] text-[#4a725b]ase md:text-lg font-light leading-relaxed">
